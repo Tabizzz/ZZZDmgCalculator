@@ -95,6 +95,7 @@ footer {
 
 .loading-background {
     background-image: url("/icons/misc/background.webp");
+    background-repeat: round;
     position: absolute;
     top: 0;
     left: 0;
