@@ -12,7 +12,7 @@ public class LangService {
 		_manager = new ResourceManager("ZZZDmgCalculator.Lang.Resources", typeof(LangService).Assembly);
 	}
 
-	public string this[string key] => _manager.GetString(key) ?? string.Empty;
+	public string this[string key] => _manager.GetString(key) ?? $"%{key}%";
 
-	public string this[Enum key] => _manager.GetString($"{key.GetType().Name}.{key}") ?? string.Empty;
+	public string this[Enum key] => this[$"{key.GetType().Name}.{key}"];
 }

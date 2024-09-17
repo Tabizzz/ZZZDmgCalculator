@@ -51,15 +51,9 @@ public class InfoService(HttpClient http, LangService lang) {
 				.Replace("{Icon}", x.Icon)
 				.Replace("{Id}", x.Id)
 				.Replace("{Id_}", x.Id.ToUnderscore());
+			x.PostLoad(lang);
 #if DEBUG
 			//Console.WriteLine(@"Loaded item {0}, Name: {1}, IconUrl: {2}", x.Id, x.DisplayName, x.Url);
-			if (x is DiscInfo { StatBuff: not null } di)
-			{
-				Console.WriteLine(di.Id);
-				Console.WriteLine(di.StatBuff.Stat);
-				Console.WriteLine(di.StatBuff.Value);
-				Console.WriteLine(di.StatBuff.Type);
-			}
 #endif
 			return x;
 		});
