@@ -1,0 +1,26 @@
+{
+	"UrlTemplate": "icons/skills/Icon_Core_Skill_{Id}.webp",
+	"Info": [
+		{
+			"Id": "Empty"
+		},
+		{
+			"Id": "A"
+		},
+		{
+			"Id": "B"
+		},
+		{
+			"Id": "C"
+		},
+		{
+			"Id": "D"
+		},
+		{
+			"Id": "E"
+		},
+		{
+			"Id": "F"
+		}
+	]
+}

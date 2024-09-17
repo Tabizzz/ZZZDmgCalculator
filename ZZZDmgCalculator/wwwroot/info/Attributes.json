@@ -1,0 +1,20 @@
+{
+	"UrlTemplate": "icons/attributes/Icon_{Id}.webp",
+	"Info": [
+		{
+			"Id": "Fire"
+		},
+		{
+			"Id": "Ice"
+		},
+		{
+			"Id": "Physical"
+		},
+		{
+			"Id": "Electric"
+		},
+		{
+			"Id": "Ether"
+		}
+	]
+}

@@ -6,10 +6,11 @@ namespace ZZZDmgCalculator.Models.Enum;
 public enum Skills
 {
 	Basic,
-	Assist,
 	Dodge,
-	ExEspecial,
+	Assist,
 	Special,
 	Ultimate,
-	Chain
+	
+	Chain,
+	Ex
 }
