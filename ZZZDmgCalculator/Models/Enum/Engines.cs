@@ -1,8 +1,11 @@
 namespace ZZZDmgCalculator.Models.Enum;
 
+using System.Text.Json.Serialization;
+
 /// <summary>
 /// List of engines that can be used in the game.
 /// </summary>
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum Engines
 {
 	#region Support
