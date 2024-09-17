@@ -1,0 +1,26 @@
+@page "/DebugInfo"
+@inject InfoService Info
+
+<PageTitle>Debug Info</PageTitle>
+
+
+<FluentTabs>
+	<FluentTab Label="Discs" Id="Discs">
+		<DebugInfo ItemList="Enum.GetValues<Discs>().Select(x => Info[x])"/>
+	</FluentTab>
+	<FluentTab Label="Skills" Id="Skills">
+		<DebugInfo ItemList="Enum.GetValues<Skills>().Select(x => Info[x])"/>
+	</FluentTab>
+	<FluentTab Label="CoreSkills" Id="CoreSkills">
+		<DebugInfo ItemList="Enum.GetValues<CoreSkills>().Select(x => Info[x])"/>
+	</FluentTab>
+	<FluentTab Label="Attributes" Id="Attributes">
+		<DebugInfo ItemList="Enum.GetValues<Attributes>().Select(x => Info[x])"/>
+	</FluentTab>
+	<FluentTab Label="Specialties" Id="Specialties">
+		<DebugInfo ItemList="Enum.GetValues<Specialties>().Select(x => Info[x])"/>
+	</FluentTab>
+	<FluentTab Label="Factions" Id="Factions">
+		<DebugInfo ItemList="Enum.GetValues<Factions>().Select(x => Info[x])"/>
+	</FluentTab>
+</FluentTabs>

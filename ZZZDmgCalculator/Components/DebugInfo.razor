@@ -1,0 +1,21 @@
+@using System.Text.Json
+@typeparam TInfo where TInfo : BaseInfo
+
+@if (ItemList is not null)
+{
+	<FluentTabs Orientation="Orientation.Vertical">
+		@foreach (var info in ItemList)
+		{
+			<FluentTab Label="@info.Id" Id="@info.Id">
+				<FluentLabel>Display Name: @info.DisplayName</FluentLabel>
+				<FluentLabel>Icon:</FluentLabel>
+				<img src="@info.Url" alt="@info.DisplayName"/>
+				<FluentLabel>Json:</FluentLabel>
+				<FluentTextArea Value="@JsonSerializer.Serialize(info, new JsonSerializerOptions { WriteIndented = true })"
+				                Rows="25"
+				                Style="width: 75%"/>
+			</FluentTab>
+		}
+
+	</FluentTabs>
+}
