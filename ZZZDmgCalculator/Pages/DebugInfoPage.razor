@@ -5,6 +5,9 @@
 
 
 <FluentTabs>
+	<FluentTab Label="Engines" Id="Engines">
+    		<DebugInfo ItemList="Enum.GetValues<Engines>().Take((int)Engines.Cradle + 1).Select(x => Info[x])"/>
+    	</FluentTab>
 	<FluentTab Label="Discs" Id="Discs">
 		<DebugInfo ItemList="Enum.GetValues<Discs>().Select(x => Info[x])"/>
 	</FluentTab>

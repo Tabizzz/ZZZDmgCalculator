@@ -28,6 +28,10 @@
 		{
 			"Id": "Ex",
 			"Icon": "EX_Special_Attack"
+		},
+		{
+			"Id": "Dash",
+			"Icon": "Dodge"
 		}
 	]
 }

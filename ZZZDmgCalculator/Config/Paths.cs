@@ -7,4 +7,5 @@ public static class Paths {
 	public const string CoreSkillsInfoUrl = "/info/CoreSkills.json";
 	public const string AttributesInfoUrl = "/info/Attributes.json";
 	public const string DiscsInfoUrl = "/info/Disc.json";
+	public const string EnginesInfoUrl = "/info/Engines.json";
 }

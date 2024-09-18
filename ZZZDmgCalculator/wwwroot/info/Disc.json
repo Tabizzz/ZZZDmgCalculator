@@ -34,7 +34,8 @@
 			"Id": "FreedomBlues",
 			"StatBuff": {
 				"Value": 30,
-				"Stat": "Proficiency"
+				"Stat": "Proficiency",
+				"Type": "CombatFlat"
 			},
 			"comment": "Anomaly Buildup Rate doesn't affect the damage dealt by the agent so we are ignoring the full set buff of this disc."
 		},
@@ -62,7 +63,8 @@
 			"FullSet": {
 				"Buff": {
 					"Value": 28,
-					"Stat": "CritRate"
+					"Stat": "CritRate",
+					"Type": "Combat"
 				}
 			}
 		},
@@ -118,7 +120,8 @@
 			"Id": "ShockstarDisco",
 			"StatBuff": {
 				"Value": 6,
-				"Stat": "Impact"
+				"Stat": "Impact",
+				"Type": "BasePercent"
 			},
 			"comment": "Impact is not damage stat, so we are ignoring the full set buff of this disc."
 		},

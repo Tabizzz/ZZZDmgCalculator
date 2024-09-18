@@ -4,7 +4,7 @@ using Enum;
 
 public class StatModifier {
 	public required Stats Stat { get; set; }
-	public required double Value { get; set; }
+	public double Value { get; set; }
 	public StatModifiers Type { get; set; }
 	/// <summary>
 	/// If true, the modifier will be applied to the enemy.

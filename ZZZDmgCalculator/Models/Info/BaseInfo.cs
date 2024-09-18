@@ -12,5 +12,5 @@ public class BaseInfo {
 
 	public string Url { get; set; } = string.Empty;
 	
-	public virtual void PostLoad(LangService lang) { }
+	public virtual void PostLoad(LangService lang, ModelInfo info) { }
 }

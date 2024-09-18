@@ -1,0 +1,187 @@
+{
+	"UrlTemplate": "icons/engines/W-Engine_{Icon}.webp",
+	"Templates": {
+		"Mark1.Main": [32, 82, 110, 160, 189, 239, 268, 318, 346, 397, 425, 475],
+		"Mark1.Sub": [8, 8, 10.4, 10.4, 12.8, 12.8, 15.2, 15.2, 17.6, 17.6, 20, 20],
+		"Mark1.Buff": [8, 9, 10, 11, 12],
+		"Mark2.Sub": [16, 16, 20.8, 20.8, 25.6, 25.6, 30.4, 30.4, 35.2, 35.2, 40, 40],
+		"Mark2.Buff": [10, 12, 13, 15, 16],
+		"GameBall.Main": [40, 102, 138, 201, 236, 299, 335, 397, 433, 496, 532, 594],
+		"GameBall.Sub": [20, 20, 26, 26, 32, 32, 38, 38, 44, 44, 50, 50],
+		"GameBall.Buff": [12, 13.5, 15.5, 17.5, 20],
+		"TheVault.Main": [42, 107, 145, 211, 248, 314, 352, 417, 455, 521, 558, 624],
+		"TheVault.Buff": [15, 17.5, 20, 22, 24],
+		"TheVault.Buff2": [0.5, 0.58, 0.65, 0.72, 0.8],
+		"SliceOfTime.Sub": [10, 10, 13, 13, 16, 16, 19, 19, 22, 22, 25, 25],
+		"Kaboom.Buff": [2.5, 2.8, 3.2, 3.6, 4],
+		"BashfulDemon.Buff": [2, 2.3, 2.6, 2.9, 3.2],
+		"Cradle.Main": [46, 118, 159, 231, 272, 344, 385, 457, 498, 570, 611, 684],
+		"Cradle.Sub": [9.6, 9.6, 12.5, 12.5, 15.4, 15.4, 18.2, 18.2, 21.1, 21.1, 24, 24],
+		"Cradle.Buff": [0.6, 0, 76, 0.9, 1.05, 1.2],
+		"Cradle.Buff2": [10, 12.5, 15, 17.5, 20],
+		"Cradle.Buff3": [1.7, 2, 2.5, 3, 3.3]
+	},
+	"Info": [
+		{
+			"Id": "Mark1",
+			"Icon": "(Reverb)_Mark_I",
+			"Rank": "B",
+			"Type": "Support",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Mark1.Main",
+			"SubStat": {"Stat": "Atk", "Type": "BasePercent"},
+			"SubTemplate": "Mark1.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Buff": {"Stat": "Impact", "Shared": true, "Type": "CombatPercent"}
+			},
+			"ScaleTemplates": {"b0": "Mark1.Buff"}
+		},
+		{
+			"Id": "Mark2",
+			"Icon": "(Reverb)_Mark_II",
+			"Rank": "B",
+			"Type": "Support",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Mark1.Main",
+			"SubStat": {"Stat": "EnergyRegen", "Type": "BasePercent"},
+			"SubTemplate": "Mark2.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Buffs": [
+					{"Stat": "Mastery", "Shared": true, "Type": "CombatFlat"},
+					{"Stat": "Proficiency", "Shared": true, "Type": "CombatFlat"}
+				]
+			},
+			"ScaleTemplates": {"b0": "Mark2.Buff"}
+		},
+		{
+			"Id": "Mark3",
+			"Icon": "(Reverb)_Mark_III",
+			"Rank": "B",
+			"Type": "Support",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Mark1.Main",
+			"SubStat": {"Stat": "HP", "Type": "BasePercent"},
+			"SubTemplate": "Mark1.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Buff": {"Stat": "Atk", "Shared": true, "Type": "CombatPercent"}
+			},
+			"ScaleTemplates": {"b0": "Mark2.Buff"}
+		},
+		{
+			"Id": "GameBall",
+			"Icon": "Unfettered_Game_Ball",
+			"Rank": "A",
+			"Type": "Support",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "GameBall.Main",
+			"SubStat": {"Stat": "EnergyRegen", "Type": "BasePercent"},
+			"SubTemplate": "GameBall.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Buff": {"Stat": "CritRate", "Shared": true, "Type": "Combat"}
+			},
+			"ScaleTemplates": {"b0": "GameBall.Buff"}
+		},
+		{
+			"Id": "TheVault",
+			"Icon": "The_Vault",
+			"Rank": "A",
+			"Type": "Support",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "TheVault.Main",
+			"SubStat": {"Stat": "EnergyRegen", "Type": "BasePercent"},
+			"SubTemplate": "GameBall.Sub",
+			"Passives": [
+				{
+					"Scale": "b0",
+					"Buff": {"Stat": "BonusDMG", "Shared": true, "Type": "Combat"}
+				},
+				{
+					"Scale": "b1",
+					"Buff": {"Stat": "EnergyRegen", "Type": "CombatFlat"}
+				}
+			],
+			"ScaleTemplates": {"b0": "TheVault.Buff", "b1": "TheVault.Buff2"}
+		},
+		{
+			"Id": "SliceOfTime",
+			"Icon": "Slice_of_Time",
+			"Rank": "A",
+			"Type": "Support",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "GameBall.Main",
+			"SubStat": {"Stat": "PenRatio"},
+			"SubTemplate": "SliceOfTime.Sub"
+		},
+		{
+			"Id": "Kaboom",
+			"Icon": "Kaboom_the_Cannon",
+			"Rank": "A",
+			"Type": "Support",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "TheVault.Main",
+			"SubStat": {"Stat": "EnergyRegen", "Type": "BasePercent"},
+			"SubTemplate": "GameBall.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Type": "Stack",
+				"Stacks": 4,
+				"Buff": {"Stat": "Atk", "Shared": true, "Type": "CombatPercent"}
+			},
+			"ScaleTemplates": {"b0": "Kaboom.Buff"}
+		},
+		{
+			"Id": "BashfulDemon",
+			"Icon": "Bashful_Demon",
+			"Rank": "A",
+			"Type": "Support",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "TheVault.Main",
+			"SubStat": {"Stat": "Atk", "Type": "BasePercent"},
+			"SubTemplate": "SliceOfTime.Sub",
+			"Passives": [
+				{
+					"Type": "Permanent",
+					"Scale": "b0",
+					"Buff": {"Stat": "IceDmg", "Type": "Combat"}
+				},
+				{
+					"Scale": "b1",
+					"Type": "Stack",
+					"Stacks": 4,
+					"Buff": {"Stat": "Atk", "Shared": true, "Type": "CombatPercent"}
+				}
+			],
+			"ScaleTemplates": {"b0": "TheVault.Buff", "b1": "BashfulDemon.Buff"}
+		},
+		{
+			"Id": "Cradle",
+			"Icon": "Weeping_Cradle",
+			"Rank": "S",
+			"Type": "Support",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Cradle.Main",
+			"SubStat": {"Stat": "PenRatio"},
+			"SubTemplate": "Cradle.Sub",
+			"Passives": [
+				{
+					"Scale": "b0",
+					"Buff": {"Stat": "EnergyRegen", "Type": "CombatFlat"}
+				},
+				{
+					"Scale": "b1",
+					"Buff": {"Stat": "BonusDmg", "Shared": true, "Type": "Combat"}
+				},
+				{
+					"Scale": "b2",
+					"Condition": "buff(\"Buffs.Engines.Cradle.1\")",
+					"Buff": {"Stat": "BonusDmg", "Shared": true, "Type": "Combat"}
+				}
+			],
+			"ScaleTemplates": {"b0": "Cradle.Buff", "b1": "Cradle.Buff2", "b2": "Cradle.Buff3"}
+		}
+	]
+}

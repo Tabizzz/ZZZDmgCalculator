@@ -28,7 +28,10 @@ public class InfoService(HttpClient http, LangService lang) {
 	public BaseInfo this[Attributes item] => _attributes[item];
 
 	Dictionary<Discs, DiscInfo> _discs = null!;
-	public BaseInfo this[Discs item] => _discs[item];
+	public DiscInfo this[Discs item] => _discs[item];
+	
+	Dictionary<Engines, EngineInfo> _engines = null!;
+	public EngineInfo this[Engines item] => _engines[item];
 
 	public async Task LoadAll() {
 		_factions = await Load<Factions, BaseInfo>(Paths.FactionsInfoUrl);
@@ -38,6 +41,7 @@ public class InfoService(HttpClient http, LangService lang) {
 		_attributes = await Load<Attributes, BaseInfo>(Paths.AttributesInfoUrl);
 
 		_discs = await Load<Discs, DiscInfo>(Paths.DiscsInfoUrl);
+		_engines = await Load<Engines, EngineInfo>(Paths.EnginesInfoUrl);
 	}
 
 	async Task<Dictionary<T, TInfo>> Load<T, TInfo>(string url) where TInfo : BaseInfo where T : struct, Enum {
@@ -51,7 +55,7 @@ public class InfoService(HttpClient http, LangService lang) {
 				.Replace("{Icon}", x.Icon)
 				.Replace("{Id}", x.Id)
 				.Replace("{Id_}", x.Id.ToUnderscore());
-			x.PostLoad(lang);
+			x.PostLoad(lang, info);
 #if DEBUG
 			//Console.WriteLine(@"Loaded item {0}, Name: {1}, IconUrl: {2}", x.Id, x.DisplayName, x.Url);
 #endif
