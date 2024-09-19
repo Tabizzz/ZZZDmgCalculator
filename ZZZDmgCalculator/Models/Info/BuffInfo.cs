@@ -23,6 +23,8 @@ public class BuffInfo {
 	/// </summary>
     public string? Condition { get; set; }
 	
+	public bool Pass { get; set; }
+	
 	[JsonInclude]
 	internal List<StatModifier> Buffs { get; set; } = [];
 	public StatModifier? Buff { get; set; }

@@ -8,8 +8,8 @@ using System.Text.Json.Serialization;
 [JsonConverter(typeof(JsonStringEnumConverter))]
 public enum Stats {
 	// Base stats
-	Hp,
 	Atk,
+	Hp,
 	Def,
 	Impact,
 	CritRate,
