@@ -27,9 +27,187 @@
 		"Spring.Buff1": [10, 11.5, 13, 14.5, 16],
 		"Peacekeeper.Buff": [36, 40, 45, 50, 55],
 		"Transmorpher.Buff": [8, 9.2, 10.4, 11.6, 12.8],
-		"Cylinder.Skill": [600, 690, 780, 870, 960]
+		"Cylinder.Skill": [600, 690, 780, 870, 960],
+		"Charlie.Sub": [6.4, 6.4, 8.3, 8.3, 10.2, 10.2, 12.2, 12.2, 14.1, 14.1, 16, 16],
+		"Bravo.Sub": [24, 24, 31, 31, 38, 38, 45, 45, 52, 52, 60, 60],
+		"Bravo.Buff": [25, 28, 32, 36, 40],
+		"Gemini.Buff": [30, 34, 38, 42, 46],
+		"Roaring.Buff": [40, 46, 52, 58, 64],
+		"Rainforest.Sub": [30, 30, 39, 39, 48, 48, 57, 57, 66, 66, 75, 75],
+		"ElectroLip.Buff": [15, 17.5, 20, 22.5, 25],
+		"Stinger.Main": [48, 123, 166, 241, 284, 359, 402, 477, 520, 595, 638, 713],
+		"Stinger.Sub": [36, 36, 46.8, 46.8, 57.6, 57.6, 68.4, 68.4, 79.2, 79.2, 90, 90],
+		"Stinger.Buff": [12, 15, 18, 21, 24],
+		"Stinger.Buff1": [40, 50, 60, 70, 80],
+		"Compiler.Buff": [12, 15, 18, 21, 24],
+		"Compiler.Buff1": [25, 31, 37, 43, 50]
 	},
 	"Info": [
+		{
+			"Id": "Compiler",
+			"Icon": "Fusion_Compiler",
+			"Rank": "S",
+			"Type": "Anomaly",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Cradle.Main",
+			"SubStat": {"Stat": "PenRatio"},
+			"SubTemplate": "Cradle.Sub",
+			"Passives": [
+				{
+					"Scale": "b0",
+					"Buff": {"Stat": "Atk", "Type": "CombatPercent"}
+				},
+				{
+					"Scale": "b1",
+					"Type": "Stack",
+					"Stacks": 3,
+					"Buff": {"Stat": "Proficiency", "Type": "CombatFlat"}
+				}
+			],
+			"ScaleTemplates": {"b0": "Compiler.Buff", "b1": "Compiler.Buff1"}
+		},
+		{
+			"Id": "Stinger",
+			"Icon": "Sharpened_Stinger",
+			"Rank": "S",
+			"Type": "Anomaly",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Stinger.Main",
+			"SubStat": {"Stat": "Proficiency", "Type": "BaseFlat"},
+			"SubTemplate": "Stinger.Sub",
+			"Passives": [
+				{
+					"Scale": "b0",
+					"Type": "Stack",
+					"Stacks": 3,
+					"Buff": {"Stat": "PhysicalDmg", "Type": "Combat"}
+				},
+				{
+					"Type": "Permanent",
+					"Scale": "b1",
+					"Depends": 0,
+					"Buff": {"Stat": "Mastery", "Type": "CombatPercent"}
+				}
+			],
+			"ScaleTemplates": {"b0": "Stinger.Buff", "b1": "Stinger.Buff1"}
+		},
+		{
+			"Id": "ElectroLip",
+			"Icon": "Electro-Lip_Gloss",
+			"Rank": "A",
+			"Type": "Anomaly",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "GameBall.Main",
+			"SubStat": {"Stat": "Proficiency", "Type": "BaseFlat"},
+			"SubTemplate": "Rainforest.Sub",
+			"Passive": {
+				"Scale": "b0,b1",
+				"Buffs": [
+					{"Stat": "Atk", "Type": "CombatPercent"},
+					{"Stat": "BonusDmg"}
+				]
+			},
+			"ScaleTemplates": {"b0": "Spring.Buff1", "b1": "ElectroLip.Buff"}
+		},
+		{
+			"Id": "Rainforest",
+			"Icon": "Rainforest_Gourmet",
+			"Rank": "A",
+			"Type": "Anomaly",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "GameBall.Main",
+			"SubStat": {"Stat": "Proficiency", "Type": "BaseFlat"},
+			"SubTemplate": "Rainforest.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Type": "Stack",
+				"Stacks": 10,
+				"Buff": {"Stat": "Atk", "Type": "CombatPercent"}
+			},
+			"ScaleTemplates": {"b0": "Kaboom.Buff"}
+		},
+		{
+			"Id": "Gemini",
+			"Icon": "Weeping_Gemini",
+			"Rank": "A",
+			"Type": "Anomaly",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "GameBall.Main",
+			"SubStat": {"Stat": "Atk", "Type": "BasePercent"},
+			"SubTemplate": "SliceOfTime.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Type": "Stack",
+				"Stacks": 4,
+				"Buff": {"Stat": "Proficiency", "Type": "CombatFlat"}
+			},
+			"ScaleTemplates": {"b0": "Gemini.Buff"}
+		},
+		{
+			"Id": "Roaring",
+			"Icon": "Roaring_Ride",
+			"Rank": "A",
+			"Type": "Anomaly",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "TheVault.Main",
+			"SubStat": {"Stat": "Atk", "Type": "BasePercent"},
+			"SubTemplate": "SliceOfTime.Sub",
+			"Passives": [
+				{
+					"Scale": "b0",
+					"Buff": {"Stat": "Atk", "Type": "CombatPercent"}
+				},
+				{
+					"Scale": "b1",
+					"Buff": {"Stat": "Proficiency", "Type": "CombatFlat"}
+				},
+				{
+					"Scale": "b2",
+					"Buff": {"Stat": "Mastery", "Type": "CombatPercent"}
+				}
+			],
+			"ScaleTemplates": {"b0": "Transmorpher.Buff", "b1": "Roaring.Buff", "b2": "Bravo.Buff"}
+		},
+		{
+			"Id": "Alpha",
+			"Icon": "(Magnetic_Storm)_Alpha",
+			"Rank": "B",
+			"Type": "Anomaly",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Mark1.Main",
+			"SubStat": {"Stat": "Atk", "Type": "BasePercent"},
+			"SubTemplate": "Mark1.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Buff": {"Stat": "Mastery", "Type": "CombatFlat"}
+			},
+			"ScaleTemplates": {"b0": "Bravo.Buff"}
+		},
+		{
+			"Id": "Bravo",
+			"Icon": "(Magnetic_Storm)_Bravo",
+			"Rank": "B",
+			"Type": "Anomaly",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Mark1.Main",
+			"SubStat": {"Stat": "Proficiency", "Type": "BaseFlat"},
+			"SubTemplate": "Bravo.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Buff": {"Stat": "Proficiency", "Type": "CombatFlat"}
+			},
+			"ScaleTemplates": {"b0": "Bravo.Buff"}
+		},
+		{
+			"Id": "Charlie",
+			"Icon": "(Magnetic_Storm)_Charlie",
+			"Rank": "B",
+			"Type": "Anomaly",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Mark1.Main",
+			"SubStat": {"Stat": "PenRatio"},
+			"SubTemplate": "Charlie.Sub"
+		},
 		{
 			"Id": "Cylinder",
 			"Icon": "Big_Cylinder",
@@ -317,7 +495,9 @@
 				},
 				{
 					"Scale": "b2",
-					"Condition": "buff(\"Buffs.Engines.Cradle.1\")",
+					"Depends": 1,
+					"Type": "Stack",
+					"Stacks": 6,
 					"Buff": {"Stat": "BonusDmg", "Shared": true, "Type": "Combat"}
 				}
 			],

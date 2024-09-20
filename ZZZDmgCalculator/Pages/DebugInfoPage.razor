@@ -5,9 +5,12 @@
 
 
 <FluentTabs>
-	<FluentTab Label="Defense Engines" Id="Defense">
-    		<DebugInfo ItemList="Enum.GetValues<Engines>().Skip((int)Engines.Inflection).Take(7).Select(x => Info[x])"/>
+	<FluentTab Label="Anomaly Engines" Id="Anomaly">
+    		<DebugInfo ItemList="Enum.GetValues<Engines>().Skip((int)Engines.Charlie).Take(9).Select(x => Info[x])"/>
     	</FluentTab>
+	<FluentTab Label="Defense Engines" Id="Defense">
+		<DebugInfo ItemList="Enum.GetValues<Engines>().Skip((int)Engines.Inflection).Take(7).Select(x => Info[x])"/>
+	</FluentTab>
 	<FluentTab Label="Support Engines" Id="Support">
 		<DebugInfo ItemList="Enum.GetValues<Engines>().Take((int)Engines.Cradle + 1).Select(x => Info[x])"/>
 	</FluentTab>
