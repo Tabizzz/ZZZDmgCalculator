@@ -28,9 +28,13 @@ public class BuffInfo {
 	/// <summary>
 	/// This buff depends on another buff, this is used to create a chain of buffs.
 	/// If the other buff is not active, this buff is not going to be applied and cannot by enabled on the UI.
-	/// If the other buff is a stack buff, this buff is going to be applied when the other buff reaches the max stacks.
 	/// </summary>
 	public int? Depends { get; set; }
+	
+	/// <summary>
+	/// If <see cref="Depends"/> is set and the dependent buff is stackable, this is the amount of stacks required to enable this buff.
+	/// </summary>
+	public int? RequiredStacks { get; set; }
 	
 	[JsonInclude]
 	internal List<StatModifier> Buffs { get; set; } = [];

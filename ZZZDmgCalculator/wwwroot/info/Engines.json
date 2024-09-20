@@ -40,9 +40,181 @@
 		"Stinger.Buff": [12, 15, 18, 21, 24],
 		"Stinger.Buff1": [40, 50, 60, 70, 80],
 		"Compiler.Buff": [12, 15, 18, 21, 24],
-		"Compiler.Buff1": [25, 31, 37, 43, 50]
+		"Compiler.Buff1": [25, 31, 37, 43, 50],
+		"Harchet.Buff": [9, 10, 11, 12, 13],
+		"Arrow.Sub": [4.8, 4.8, 6.2, 6.2, 7.7, 7.7, 9.1, 9.1, 10.6, 10.6, 12, 12],
+		"Shooter.Sub": [6, 6, 7.8, 7.8, 9.6, 9.6, 11.4, 11.4, 13.2, 13.2, 15, 15],
+		"Battery.Buff": [18, 20.5, 23, 25, 27.5],
+		"Teapot.Sub": [7.2, 7.2, 9.4, 9.4, 11.5, 11.5, 13.7, 13.7, 15.8, 15.8, 18, 18],
+		"Teapot.Buff": [0.7, 0.88, 1.05, 1.22, 1.4]
 	},
 	"Info": [
+		{
+			"Id": "Hellfire",
+			"Icon": "Hellfire_Gears",
+			"Rank": "S",
+			"Type": "Stun",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Cradle.Main",
+			"SubStat": {"Stat": "Impact", "Type": "BasePercent"},
+			"SubTemplate": "Teapot.Sub",
+			"Passives": [
+				{
+					"Scale": "b0",
+					"Buff": {"Stat": "EnergyRegen", "Type": "CombatFlat"}
+				},
+				{
+					"Scale": "b1",
+					"Type": "Stack",
+					"Stacks": 2,
+					"Buff": {"Stat": "Impact", "Type": "CombatPercent"}
+				}
+			],
+			"ScaleTemplates": {"b0": "Cradle.Buff", "b1": "Cradle.Buff2"}
+		},
+		{
+			"Id": "Teapot",
+			"Icon": "Ice-Jade_Teapot",
+			"Rank": "S",
+			"Type": "Stun",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Stinger.Main",
+			"SubStat": {"Stat": "Impact", "Type": "BasePercent"},
+			"SubTemplate": "Teapot.Sub",
+			"Passives": [
+				{
+					"Scale": "b0",
+					"Type": "Stack",
+					"Stacks": 30,
+					"Buff": {"Stat": "Impact", "Type": "CombatPercent"}
+				},
+				{
+					"Scale": "b1",
+					"Type": "Permanent",
+					"Depends": 0,
+					"RequiredStacks": 15,
+					"Buff": {"Stat": "BonusDmg", "Shared": true}
+				}
+			],
+			"ScaleTemplates": {"b0": "Teapot.Buff", "b1": "Base.Buff"}
+		},
+		{
+			"Id": "Restrained",
+			"Icon": "The_Restrained",
+			"Rank": "S",
+			"Type": "Stun",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Cradle.Main",
+			"SubStat": {"Stat": "Impact", "Type": "BasePercent"},
+			"SubTemplate": "Teapot.Sub"
+		},
+		{
+			"Id": "Battery",
+			"Icon": "Demara_Battery_Mark_II",
+			"Rank": "A",
+			"Type": "Stun",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "TheVault.Main",
+			"SubStat": {"Stat": "Impact", "Type": "BasePercent"},
+			"SubTemplate": "Shooter.Sub",
+			"Passives": [
+				{
+					"Scale": "b0",
+					"Type": "Permanent",
+					"Buff": {"Stat": "ElectricDmg", "Type": "Combat"}
+				},
+				{
+					"Scale": "b1",
+					"Buff": {"Stat": "EnergyRegen", "Type": "CombatPercent"}
+				}
+			],
+			"ScaleTemplates": {"b0": "TheVault.Buff", "b1": "Battery.Buff"}
+		},
+		{
+			"Id": "Rock",
+			"Icon": "Precious_Fossilized_Core",
+			"Rank": "A",
+			"Type": "Stun",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "GameBall.Main",
+			"SubStat": {"Stat": "Impact", "Type": "BasePercent"},
+			"SubTemplate": "Shooter.Sub",
+			"Passives": [
+				{
+					"Scale": "b0",
+					"Buff": {"Stat": "Impact", "Type": "CombatPercent"}
+				},
+				{
+					"Scale": "b0",
+					"Depends": 0,
+					"Buff": {"Stat": "Impact", "Type": "CombatPercent"}
+				}
+			],
+			"ScaleTemplates": {"b0": "Spring.Buff1"}
+		},
+		{
+			"Id": "Shooter",
+			"Icon": "Six_Shooter",
+			"Rank": "A",
+			"Type": "Stun",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "GameBall.Main",
+			"SubStat": {"Stat": "Impact", "Type": "BasePercent"},
+			"SubTemplate": "Shooter.Sub"
+		},
+		{
+			"Id": "Steam",
+			"Icon": "Steam_Oven",
+			"Rank": "A",
+			"Type": "Stun",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "GameBall.Main",
+			"SubStat": {"Stat": "EnergyRegen", "Type": "BasePercent"},
+			"SubTemplate": "GameBall.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Type": "Stack",
+				"Stacks": 8,
+				"Buff": {"Stat": "Impact", "Type": "CombatPercent"}
+			},
+			"ScaleTemplates": {"b0": "BashfulDemon.Buff"}
+		},
+		{
+			"Id": "Arrow",
+			"Icon": "(Vortex)_Arrow",
+			"Rank": "B",
+			"Type": "Stun",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Mark1.Main",
+			"SubStat": {"Stat": "Impact", "Type": "BasePercent"},
+			"SubTemplate": "Arrow.Sub"
+		},
+		{
+			"Id": "Hatchet",
+			"Icon": "(Vortex)_Hatchet",
+			"Rank": "B",
+			"Type": "Stun",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Mark1.Main",
+			"SubStat": {"Stat": "EnergyRegen", "Type": "BasePercent"},
+			"SubTemplate": "Mark2.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Buff": {"Stat": "Impact", "Type": "CombatPercent"}
+			},
+			"ScaleTemplates": {"b0": "Harchet.Buff"}
+		},
+		{
+			"Id": "Revolver",
+			"Icon": "(Vortex)_Revolver",
+			"Rank": "B",
+			"Type": "Stun",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Mark1.Main",
+			"SubStat": {"Stat": "Atk", "Type": "BasePercent"},
+			"SubTemplate": "Mark1.Sub",
+			"Comment": "TODO: Add the stun passive"
+		},
 		{
 			"Id": "Compiler",
 			"Icon": "Fusion_Compiler",
@@ -86,6 +258,7 @@
 					"Type": "Permanent",
 					"Scale": "b1",
 					"Depends": 0,
+					"RequiredStacks": 3,
 					"Buff": {"Stat": "Mastery", "Type": "CombatPercent"}
 				}
 			],

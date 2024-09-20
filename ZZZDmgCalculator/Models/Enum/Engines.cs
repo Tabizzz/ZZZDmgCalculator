@@ -68,7 +68,7 @@ public enum Engines
 	
 	#region Stun
 	Revolver,
-	Harchet,
+	Hatchet,
 	Arrow,
 	
 	Steam,
