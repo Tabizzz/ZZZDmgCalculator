@@ -39,16 +39,290 @@
 		"Stinger.Sub": [36, 36, 46.8, 46.8, 57.6, 57.6, 68.4, 68.4, 79.2, 79.2, 90, 90],
 		"Stinger.Buff": [12, 15, 18, 21, 24],
 		"Stinger.Buff1": [40, 50, 60, 70, 80],
-		"Compiler.Buff": [12, 15, 18, 21, 24],
-		"Compiler.Buff1": [25, 31, 37, 43, 50],
+		"Compiler.Buff": [25, 31, 37, 43, 50],
 		"Harchet.Buff": [9, 10, 11, 12, 13],
 		"Arrow.Sub": [4.8, 4.8, 6.2, 6.2, 7.7, 7.7, 9.1, 9.1, 10.6, 10.6, 12, 12],
 		"Shooter.Sub": [6, 6, 7.8, 7.8, 9.6, 9.6, 11.4, 11.4, 13.2, 13.2, 15, 15],
 		"Battery.Buff": [18, 20.5, 23, 25, 27.5],
 		"Teapot.Sub": [7.2, 7.2, 9.4, 9.4, 11.5, 11.5, 13.7, 13.7, 15.8, 15.8, 18, 18],
-		"Teapot.Buff": [0.7, 0.88, 1.05, 1.22, 1.4]
+		"Teapot.Buff": [0.7, 0.88, 1.05, 1.22, 1.4],
+		"Pleniluna.Buff": [12, 14, 16, 18, 20],
+		"Superstar.Buff": [15, 17.2, 19.5, 21.7, 24],
+		"StarlightReplica.Buff": [36, 41, 46.5, 52, 57.5],
+		"Starlight.Buff": [12, 13.8, 15.6, 17.4, 19.2],
+		"Housekeeper.Buff": [0.45, 0.52, 0.58, 0.65, 0.72],
+		"Housekeeper.Buff1": [3, 3.5, 4, 4.4, 4.8],
+		"Blossom.Buff": [6, 6.9, 7.8, 8.7, 9.6],
+		"Drill.Buff": [50, 57.5, 65, 72.5, 80],
+		"Brimstone.Sub": [12, 12, 15.6, 15.6, 19.2, 19.2, 22.8, 22.8, 26.4, 26.4, 30, 30],
+		"Brimstone.Buff": [3.5, 4.4, 5.2, 6, 7],
+		"Cushion.Buff": [20, 25, 30, 35, 40],
+		"Cushion.Buff1": [25, 31.5, 38, 44, 50],
+		"Suppressor.Sub": [19.2, 19.2, 25, 25, 30.7, 30.7, 36.5, 36.5, 42.2, 42.2, 48, 48],
+		"Suppressor.Buff": [15, 18.8, 22.6, 26.4, 30],
+		"Suppressor.Buff1": [35, 43.5, 52, 60.5, 70]
 	},
 	"Info": [
+		{
+			"Id": "DeepSea",
+			"Icon": "Deep_Sea_Visitor",
+			"Rank": "S",
+			"Type": "Attack",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Stinger.Main",
+			"SubStat": {"Stat": "CritRate"},
+			"SubTemplate": "Cradle.Sub",
+			"Passives": [
+				{
+					"Scale": "b0",
+					"Type": "Permanent",
+					"Buff": {"Stat": "IceDmg", "Type": "Combat"}
+				},
+				{
+					"Scale": "b1",
+					"Buff": {"Stat": "CritRate", "Type": "Combat"}
+				},
+				{
+					"Scale": "b1",
+					"Buff": {"Stat": "CritRate", "Type": "Combat"}
+				}
+			],
+			"ScaleTemplates": {"b0": "Cushion.Buff1", "b1": "Cradle.Buff2"}
+		},
+		{
+			"Id": "Suppressor",
+			"Icon": "Riot_Suppressor_Mark_VI",
+			"Rank": "S",
+			"Type": "Attack",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Stinger.Main",
+			"SubStat": {"Stat": "CritDmg"},
+			"SubTemplate": "Suppressor.Sub",
+			"Passives": [
+				{
+					"Scale": "b0",
+					"Type": "Permanent",
+					"Buff": {"Stat": "CritRate", "Type": "Combat"}
+				},
+				{
+					"Scale": "b1",
+					"Condition": "Skill==Basic",
+					"Buff": {"Stat": "BonusDmg"}
+				}
+			],
+			"ScaleTemplates": {"b0": "Suppressor.Buff", "b1": "Suppressor.Buff1"}
+		},
+		{
+			"Id": "Cushion",
+			"Icon": "Steel_Cushion",
+			"Rank": "S",
+			"Type": "Attack",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Cradle.Main",
+			"SubStat": {"Stat": "CritRate"},
+			"SubTemplate": "Cradle.Sub",
+			"Passives": [
+				{
+					"Scale": "b0",
+					"Type": "Permanent",
+					"Buff": {"Stat": "PhysicalDmg", "Type": "Combat"}
+				},
+				{
+					"Scale": "b1",
+					"Buff": {"Stat": "BonusDmg"}
+				}
+			],
+			"ScaleTemplates": {"b0": "Cushion.Buff", "b1": "Cushion.Buff1"}
+		},
+		{
+			"Id": "Brimstone",
+			"Icon": "The_Brimstone",
+			"Rank": "S",
+			"Type": "Attack",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Cradle.Main",
+			"SubStat": {"Stat": "Atk", "Type": "BasePercent"},
+			"SubTemplate": "Brimstone.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Type": "Stack",
+				"Stacks": 8,
+				"Buff": {"Stat": "Atk", "Type": "CombatPercent"}
+			},
+			"ScaleTemplates": {"b0": "Brimstone.Buff"}
+		},
+		{
+			"Id": "Cannon",
+			"Icon": "Cannon_Rotor",
+			"Rank": "A",
+			"Type": "Attack",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "GameBall.Main",
+			"SubStat": {"Stat": "CritRate"},
+			"SubTemplate": "Mark1.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Buff": {"Stat": "Atk", "Type": "CombatPercent"}
+			},
+			"ScaleTemplates": {"b0": "Drill.Buff"},
+			"Skill": {
+				"Engine": true,
+				"Value": 200
+			}
+		},
+		{
+			"Id": "Drill",
+			"Icon": "Drill_Rig_-_Red_Axis",
+			"Rank": "A",
+			"Type": "Attack",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "TheVault.Main",
+			"SubStat": {"Stat": "EnergyRegen", "Type": "BasePercent"},
+			"SubTemplate": "GameBall.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Condition": "Skill==Basic || Skill==Dash",
+				"Buff": {"Stat": "ElectricDmg", "Type": "Combat"}
+			},
+			"ScaleTemplates": {"b0": "Drill.Buff"}
+		},
+		{
+			"Id": "Blossom",
+			"Icon": "Gilded_Blossom",
+			"Rank": "A",
+			"Type": "Attack",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "GameBall.Main",
+			"SubStat": {"Stat": "Atk", "Type": "BasePercent"},
+			"SubTemplate": "SliceOfTime.Sub",
+			"Passives": [
+				{
+					"Scale": "b0",
+					"Type": "Permanent",
+					"Buff": {"Stat": "Atk", "Type": "CombatPercent"}
+				},
+				{
+					"Scale": "b1",
+					"Type": "Permanent",
+					"Condition": "Skill==Ex",
+					"Buff": {"Stat": "BonusDmg"}
+				}
+			],
+			"ScaleTemplates": {"b0": "Blossom.Buff", "b1": "Superstar.Buff"}
+		},
+		{
+			"Id": "Housekeeper",
+			"Icon": "Housekeeper",
+			"Rank": "A",
+			"Type": "Attack",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "TheVault.Main",
+			"SubStat": {"Stat": "Atk", "Type": "BasePercent"},
+			"SubTemplate": "SliceOfTime.Sub",
+			"Passives": [
+				{
+					"Scale": "b0",
+					"Buff": {"Stat": "EnergyRegen", "Type": "CombatFlat"}
+				},
+				{
+					"Scale": "b1",
+					"Type": "Stack",
+					"Stacks": 15,
+					"Buff": {"Stat": "PhysicalDmg", "Type": "Combat"}
+				}
+			],
+			"ScaleTemplates": {"b0": "Housekeeper.Buff", "b1": "Housekeeper.Buff1"}
+		},
+		{
+			"Id": "Starlight",
+			"Icon": "Starlight_Engine",
+			"Rank": "A",
+			"Type": "Attack",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "GameBall.Main",
+			"SubStat": {"Stat": "Atk", "Type": "BasePercent"},
+			"SubTemplate": "SliceOfTime.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Buff": {"Stat": "Atk", "Type": "CombatPercent"}
+			},
+			"ScaleTemplates": {"b0": "Starlight.Buff"}
+		},
+		{
+			"Id": "StarlightReplica",
+			"Icon": "Starlight_Engine_Replica",
+			"Rank": "A",
+			"Type": "Attack",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "TheVault.Main",
+			"SubStat": {"Stat": "Atk", "Type": "BasePercent"},
+			"SubTemplate": "SliceOfTime.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Buff": {"Stat": "PhysicalDmg", "Type": "Combat"}
+			},
+			"ScaleTemplates": {"b0": "StarlightReplica.Buff"}
+		},
+		{
+			"Id": "Superstar",
+			"Icon": "Street_Superstar",
+			"Rank": "A",
+			"Type": "Attack",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "GameBall.Main",
+			"SubStat": {"Stat": "Atk", "Type": "BasePercent"},
+			"SubTemplate": "SliceOfTime.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Type": "Stack",
+				"Stacks": 3,
+				"Condition": "Skill==Ultimate",
+				"Buff": {"Stat": "BonusDmg"}
+			},
+			"ScaleTemplates": {"b0": "Superstar.Buff"}
+		},
+		{
+			"Id": "Decrescent",
+			"Icon": "(Lunar)_Decrescent",
+			"Rank": "B",
+			"Type": "Attack",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Mark1.Main",
+			"SubStat": {"Stat": "Atk", "Type": "BasePercent"},
+			"SubTemplate": "Mark1.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Buff": {"Stat": "BonusDmg"}
+			},
+			"ScaleTemplates": {"b0": "ElectroLip.Buff"}
+		},
+		{
+			"Id": "Noviluna",
+			"Icon": "(Lunar)_Noviluna",
+			"Rank": "B",
+			"Type": "Attack",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Mark1.Main",
+			"SubStat": {"Stat": "CritRate"},
+			"SubTemplate": "Charlie.Sub"
+		},
+		{
+			"Id": "Pleniluna",
+			"Icon": "(Lunar)_Pleniluna",
+			"Rank": "B",
+			"Type": "Attack",
+			"MainStat": {"Stat": "Atk"},
+			"MainTemplate": "Mark1.Main",
+			"SubStat": {"Stat": "Atk", "Type": "BasePercent"},
+			"SubTemplate": "Mark1.Sub",
+			"Passive": {
+				"Scale": "b0",
+				"Type": "Permanent",
+				"Condition": "Skill==Basic || Skill==Dash || Skill==Dodge",
+				"Buff": {"Stat": "BonusDmg"}
+			},
+			"ScaleTemplates": {"b0": "Pleniluna.Buff"}
+		},
 		{
 			"Id": "Hellfire",
 			"Icon": "Hellfire_Gears",
@@ -236,7 +510,7 @@
 					"Buff": {"Stat": "Proficiency", "Type": "CombatFlat"}
 				}
 			],
-			"ScaleTemplates": {"b0": "Compiler.Buff", "b1": "Compiler.Buff1"}
+			"ScaleTemplates": {"b0": "Stinger.Buff", "b1": "Compiler.Buff"}
 		},
 		{
 			"Id": "Stinger",

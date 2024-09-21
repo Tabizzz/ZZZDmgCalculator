@@ -8,9 +8,9 @@ using System.Text.Json.Serialization;
 [JsonConverter(typeof(JsonStringEnumConverter))]
 public enum Attributes
 {
+	Physical,
 	Fire,
 	Ice,
-	Physical,
 	Electric,
 	Ether
 }

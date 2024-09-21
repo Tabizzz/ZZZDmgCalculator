@@ -16,6 +16,5 @@ public enum Skills
 	
 	Chain,
 	Ex,
-	// TODO: Add this entry to Skills.json
 	Dash
 }

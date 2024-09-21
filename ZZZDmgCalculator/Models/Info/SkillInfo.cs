@@ -11,6 +11,8 @@ public class SkillInfo {
 	public bool Engine { get; set; }
 	
 	public Skills Type { get; set; }
+	
+	public Attributes DmgType { get; set; }
 
 	public double Value { get; set; }
 

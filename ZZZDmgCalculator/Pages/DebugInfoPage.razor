@@ -5,6 +5,9 @@
 
 
 <FluentTabs>
+	<FluentTab Label="Attack Engines" Id="Attack">
+		<DebugInfo ItemList="Enum.GetValues<Engines>().Skip((int)Engines.Pleniluna).Take(14).Select(x => Info[x])"/>
+	</FluentTab>
 	<FluentTab Label="Stun Engines" Id="Stun">
 		<DebugInfo ItemList="Enum.GetValues<Engines>().Skip((int)Engines.Revolver).Take(10).Select(x => Info[x])"/>
 	</FluentTab>
