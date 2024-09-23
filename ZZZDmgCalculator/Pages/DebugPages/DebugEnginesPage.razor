@@ -1,0 +1,96 @@
+@page "/_src/engines"
+@using ZZZDmgCalculator.Models.State
+@inject InfoService Info
+
+<h3>DebugEnginesPage</h3>
+
+@if (_state is not null)
+{
+	<FluentCard MinimalStyle="true" Width="300px" Height="140px" AreaRestricted="false">
+		<FluentStack Orientation="Orientation.Horizontal">
+			<img src="@_state.Info.Url" alt="@_state.Info.DisplayName" @onclick="OpenDialog" role="button"/>
+			<div>
+				<p>@_state.Info.DisplayName</p>
+				<FluentStack Orientation="Orientation.Horizontal" Style="margin-bottom: 10px" VerticalAlignment="VerticalAlignment.Center">
+					<FluentLabel>Level:</FluentLabel>
+					<FluentSelect
+						TOption="AscensionState"
+						Appearance="Appearance.Stealth"
+						Items="Enum.GetValues<AscensionState>()"
+						OptionText="state => state.ToString().Replace('A'.ToString(), string.Empty).Replace('_', '/')"
+						@bind-SelectedOption="_state.Ascension"
+						Style="min-width: unset"/>
+				</FluentStack>
+				<FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center">
+					<FluentLabel>Refinement:</FluentLabel>
+					<FluentSelect
+						TOption="int"
+						Appearance="Appearance.Stealth"
+						Items="[1, 2, 3, 4, 5]"
+						@bind-SelectedOption="_state.Refinement"
+						Style="min-width: unset"/>
+				</FluentStack>
+			</div>
+		</FluentStack>
+	</FluentCard>
+	<FluentCard MinimalStyle="true" Width="300px" Height="140px">
+		<FluentLabel>Atk: @_state.MainStat.Value</FluentLabel>
+		<FluentLabel>@_state.SubStat.Stat: @_state.SubStat.Value</FluentLabel>
+	</FluentCard>
+	<FluentAccordion>
+		<FluentAccordionItem Heading="Buffs">
+			@foreach (var buff in _state.Buffs)
+			{
+				<FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center">
+					@switch (buff.Info.Type)
+					{
+						case BuffTrigger.Permanent:
+							<FluentIcon Value="@(new Icons.Regular.Size24.Save())" />
+							break;
+						case BuffTrigger.Switch:
+							<FluentSwitch Value="@buff.Enabled" ValueChanged="x => {buff.Enabled=x;_state.UpdateActivePassives();}"/>
+							break;
+						case BuffTrigger.Stack:
+						default:
+							<FluentSelect
+							TOption="int"
+							Appearance="Appearance.Stealth"
+							Items="Enumerable.Range(0, buff.MaxStacks + 1)"
+							SelectedOption="@buff.Stacks"
+							SelectedOptionChanged="i => {buff.Stacks = i;_state.UpdateActivePassives();}"
+							Style="min-width: unset"/>
+							break;
+					}
+					<FluentLabel>@buff.Info.DisplayName</FluentLabel>
+				</FluentStack>
+				<p>@buff.Info.Description</p>
+			}
+		</FluentAccordionItem>
+		<FluentAccordionItem Heading="Skills">
+			
+		</FluentAccordionItem>
+		<FluentAccordionItem Heading="Active buffs">
+			@foreach(var buff in _state.Passives)
+			{
+				<FluentCard MinimalStyle="true">
+					<FluentLabel>Stat: @buff.Stat</FluentLabel>
+					<FluentLabel>Vale: @buff.Value</FluentLabel>
+					<FluentLabel>Mode: @buff.Type</FluentLabel>
+				</FluentCard>
+			}
+		</FluentAccordionItem>
+	</FluentAccordion>
+}
+
+@code {
+	EngineState? _state;
+
+	protected override void OnInitialized() {
+		_state = new EngineState(Info[Engines.Stinger]);
+		_state.UpdateActivePassives();
+	}
+
+	void OpenDialog() {
+		
+	}
+}

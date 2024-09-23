@@ -9,10 +9,18 @@ public class StatModifier {
 	/// <summary>
 	/// If true, the modifier will be applied to the enemy.
 	/// </summary>
-	public bool Enemy { get; set; } = false;
+	public bool Enemy { get; set; }
 	/// <summary>
 	/// If true, the modifier will be applied to the entire team and not just the owner.
 	/// </summary>
-	public bool Shared { get; set; } = false;
+	public bool Shared { get; set; }
 	
+	public StatModifier WithValue(double value) => new()
+	{
+		Stat = Stat,
+		Value = value,
+		Type = Type,
+		Enemy = Enemy,
+		Shared = Shared
+	};
 }
