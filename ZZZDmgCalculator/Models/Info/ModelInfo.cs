@@ -1,7 +1,7 @@
 namespace ZZZDmgCalculator.Models.Info;
 
 public class ModelInfo {
-	public required string UrlTemplate { get; set; }
+	public string UrlTemplate { get; set; } = string.Empty;
 	public Dictionary<string, double[]> Templates { get; set; } = [];
 }
 

@@ -32,6 +32,9 @@ public class InfoService(HttpClient http, LangService lang) {
 	
 	Dictionary<Engines, EngineInfo> _engines = null!;
 	public EngineInfo this[Engines item] => _engines[item];
+	
+	Dictionary<Stats, StatInfo> _stats = null!;
+	public StatInfo this[Stats item] => _stats[item];
 
 	public async Task LoadAll() {
 		_factions = await Load<Factions, BaseInfo>(Paths.FactionsInfoUrl);
@@ -42,6 +45,7 @@ public class InfoService(HttpClient http, LangService lang) {
 
 		_discs = await Load<Discs, DiscInfo>(Paths.DiscsInfoUrl);
 		_engines = await Load<Engines, EngineInfo>(Paths.EnginesInfoUrl);
+		_stats = await Load<Stats, StatInfo>(Paths.StatsInfoUrl);
 	}
 
 	async Task<Dictionary<T, TInfo>> Load<T, TInfo>(string url) where TInfo : BaseInfo where T : struct, Enum {
@@ -50,15 +54,12 @@ public class InfoService(HttpClient http, LangService lang) {
 
 		// map the info to the enum
 		var ret = info.Info.ToDictionary(x => Enum.Parse<T>(x.Id), x => {
-			x.DisplayName = lang[(Enum.Parse<T>(x.Id) as Enum)!];
+			x.DisplayName = lang[Enum.Parse<T>(x.Id)];
 			x.Url = info.UrlTemplate
 				.Replace("{Icon}", x.Icon)
 				.Replace("{Id}", x.Id)
 				.Replace("{Id_}", x.Id.ToUnderscore());
 			x.PostLoad(lang, info);
-#if DEBUG
-			//Console.WriteLine(@"Loaded item {0}, Name: {1}, IconUrl: {2}", x.Id, x.DisplayName, x.Url);
-#endif
 			return x;
 		});
 

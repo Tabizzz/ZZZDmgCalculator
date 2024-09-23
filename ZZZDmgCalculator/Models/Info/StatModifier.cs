@@ -23,4 +23,32 @@ public class StatModifier {
 		Enemy = Enemy,
 		Shared = Shared
 	};
+	
+	public bool IsCombatStat
+	{
+		get
+		{
+			if(Type == StatModifiers.Combat || Type == StatModifiers.CombatPercent || Type == StatModifiers.CombatFlat)
+				return true;
+			return Stat > Stats.BonusDmg;
+		}
+	}
+	
+	public bool IsPercent
+	{
+		get
+		{
+			if (Type is StatModifiers.CombatPercent or StatModifiers.BasePercent)
+				return true;
+
+			return Stat switch
+			{
+				Stats.CritRate => true,
+				Stats.CritDmg => true,
+				Stats.PenRatio => true,
+				> Stats.ElectricDmg => true,
+				_ => false
+			};
+		}
+	}
 }

@@ -6,7 +6,7 @@ using Services;
 public class EngineInfo : BaseInfo {
 	public required Specialties Type { get; set; }
 
-	public required WeaponRank Rank { get; set; }
+	public required ItemRank Rank { get; set; }
 
 	public required StatModifier MainStat { get; set; }
 

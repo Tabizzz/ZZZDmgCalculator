@@ -8,4 +8,5 @@ public static class Paths {
 	public const string AttributesInfoUrl = "/info/Attributes.json";
 	public const string DiscsInfoUrl = "/info/Disc.json";
 	public const string EnginesInfoUrl = "/info/Engines.json";
+	public const string StatsInfoUrl = "/info/Stats.json";
 }

@@ -13,7 +13,6 @@ public class EngineState(EngineInfo info) {
 		get => _ascension;
 		set
 		{
-			Console.WriteLine($@"Ascencion changed to {value}");
 			_ascension = value;
 			Update();
 		}
@@ -61,7 +60,6 @@ public class EngineState(EngineInfo info) {
 	
 	public void UpdateActivePassives() {
 		_activePassives.Clear();
-		Console.WriteLine(@"Updating active passives");
 		foreach (var passive in Buffs.Where(passive => passive.Active))
 		{
 			if (passive.HasDependencies)

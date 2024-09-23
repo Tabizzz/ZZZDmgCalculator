@@ -1,0 +1,323 @@
+{
+	"Info": [
+		{
+			"Id": "Atk",
+			"IsMain": true,
+			"IsSub": true,
+			"DiscData": [
+				{
+					"MainDiscs": [2],
+					"SubScales": [7, 15, 19],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 104],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 212],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 316]
+					],
+					"Buff": {"Stat": "Atk", "Type": "BaseFlat"}
+				},
+				{
+					"MainDiscs": [4, 5, 6],
+					"SubScales": [1, 2, 3],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 10],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 30]
+					],
+					"Buff": {"Stat": "Atk", "Type": "BasePercent"}
+				}
+			]
+		},
+		{
+			"Id": "Def",
+			"IsMain": true,
+			"IsSub": true,
+			"DiscData": [
+				{
+					"MainDiscs": [3],
+					"SubScales": [5, 10, 15],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 60],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 124],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 184]
+					],
+					"Buff": {"Stat": "Def", "Type": "BaseFlat"}
+				},
+				{
+					"MainDiscs": [4, 5, 6],
+					"SubScales": [1.6, 3.2, 4.8],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 16],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 32],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 48]
+					],
+					"Buff": {"Stat": "Def", "Type": "BasePercent"}
+				}
+			]
+		},
+		{
+			"Id": "Hp",
+			"IsMain": true,
+			"IsSub": true,
+			"DiscData": [
+				{
+					"MainDiscs": [1],
+					"SubScales": [39, 79, 112],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 734],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 1468],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 2200]
+					],
+					"Buff": {"Stat": "Hp", "Type": "BaseFlat"}
+				},
+				{
+					"MainDiscs": [4, 5, 6],
+					"SubScales": [1, 2, 3],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 10],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 30]
+					],
+					"Buff": {"Stat": "Hp", "Type": "BasePercent"}
+				}
+			]
+		},
+		{
+			"Id": "CritRate",
+			"IsMain": true,
+			"IsSub": true,
+			"DiscData": [
+				{
+					"MainDiscs": [4],
+					"SubScales": [0.8, 1.6, 2.4],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 8],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 16],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 24]
+					],
+					"Buff": {"Stat": "CritRate"}
+				}
+			]
+		},
+		{
+			"Id": "CritDmg",
+			"IsMain": true,
+			"IsSub": true,
+			"DiscData": [
+				{
+					"MainDiscs": [4],
+					"SubScales": [1.6, 3.2, 4.8],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 16],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 32],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 48]
+					],
+					"Buff": {"Stat": "CritDmg"}
+				}
+			]
+		},
+		{
+			"Id": "Impact",
+			"IsMain": true,
+			"DiscData": [
+				{
+					"MainDiscs": [6],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 6],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 18]
+					],
+					"Buff": {"Stat": "Impact", "Type": "BasePercent"}
+				}
+			]
+		},
+		{
+			"Id": "Pen",
+			"IsSub": true,
+			"DiscData": [
+				{
+					"SubScales": [3, 6, 9],
+					"Buff": {"Stat": "Pen", "Type": "BaseFlat"}
+				}
+			]
+		},
+		{
+			"Id": "PenRatio",
+			"IsMain": true,
+			"DiscData": [
+				{
+					"MainDiscs": [5],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 8],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 16],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 24]
+					],
+					"Buff": {"Stat": "PenRatio"}
+				}
+			]
+		},
+		{
+			"Id": "EnergyRegen",
+			"IsMain": true,
+			"DiscData": [
+				{
+					"MainDiscs": [6],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 20],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 40],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 60]
+					],
+					"Buff": {"Stat": "EnergyRegen", "Type": "BasePercent"}
+				}
+			]
+		},
+		{
+			"Id": "Proficiency",
+			"IsMain": true,
+			"IsSub": true,
+			"DiscData": [
+				{
+					"MainDiscs": [4],
+					"SubScales": [3, 6, 9],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 32],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 60],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 92]
+					],
+					"Buff": {"Stat": "Proficiency", "Type": "BaseFlat"}
+				}
+			]
+		},
+		{
+			"Id": "Mastery",
+			"IsMain": true,
+			"DiscData": [
+				{
+					"MainDiscs": [6],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 10],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 30]
+					],
+					"Buff": {"Stat": "Mastery", "Type": "BasePercent"}
+				}
+			]
+		},
+		{
+			"Id": "ElectricDmg",
+			"IsMain": true,
+			"DiscData": [
+				{
+					"MainDiscs": [5],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 10],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 30]
+					],
+					"Buff": {"Stat": "ElectricDmg"}
+				}
+			]
+		},
+		{
+			"Id": "EtherDmg",
+			"IsMain": true,
+			"DiscData": [
+				{
+					"MainDiscs": [5],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+					],
+					"Buff": {"Stat": "EtherDmg"}
+				}
+			]
+		},
+		{
+			"Id": "FireDmg",
+			"IsMain": true,
+			"DiscData": [
+				{
+					"MainDiscs": [5],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+					],
+					"Buff": {"Stat": "FireDmg"}
+				}
+			]
+		},
+		{
+			"Id": "IceDmg",
+			"IsMain": true,
+			"DiscData": [
+				{
+					"MainDiscs": [5],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+					],
+					"Buff": {"Stat": "IceDmg"}
+				}
+			]
+		},
+		{
+			"Id": "PhysicalDmg",
+			"IsMain": true,
+			"DiscData": [
+				{
+					"MainDiscs": [5],
+					"MainScales": [
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+						[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+					],
+					"Buff": {"Stat": "PhysicalDmg"}
+				}
+			]
+		},
+		{
+			"Id": "ElectricCritDmg"
+		},
+		{
+			"Id": "EtherCritDmg"
+		},
+		{
+			"Id": "FireCritDmg"
+		},
+		{
+			"Id": "IceCritDmg"
+		},
+		{
+			"Id": "PhysicalCritDmg"
+		},
+		{
+			"Id": "ElectricCritRate"
+		},
+		{
+			"Id": "EtherCritRate"
+		},
+		{
+			"Id": "FireCritRate"
+		},
+		{
+			"Id": "IceCritRate"
+		},
+		{
+			"Id": "PhysicalCritRate"
+		},
+		{
+			"Id": "BonusDmg"
+		},
+		{
+			"Id": "DmgTaken"
+		},
+		{
+			"Id": "DmgReduction"
+		},
+		{
+			"Id": "StunDmg"
+		}
+	]
+}
