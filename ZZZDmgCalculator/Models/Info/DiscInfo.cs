@@ -19,8 +19,9 @@ public class DiscInfo : BaseInfo {
 		for (var i = 0; i < FullSets.Count; i++)
 		{
 			var buffInfo = FullSets[i];
-			buffInfo.DisplayName = lang[$"Buffs.Discs.{Id}.{i}"];;
-			buffInfo.Description = lang[$"Buffs.Discs.{Id}.{i}.Desc"];
+			buffInfo.Id = $"Buffs.Engines.{Id}.{i}";
+			buffInfo.DisplayName = lang[buffInfo.Id];
+			buffInfo.Description = lang[$"{buffInfo.Id}.Desc"];
 		}
 	}
 }

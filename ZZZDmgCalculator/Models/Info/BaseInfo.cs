@@ -3,8 +3,8 @@ namespace ZZZDmgCalculator.Models.Info;
 using Services;
 
 public class BaseInfo {
-	
-	public required string Id { get; set; }
+
+	public string Id { get; set; } = string.Empty;
 
 	public string DisplayName { get; set; } = string.Empty;
 	

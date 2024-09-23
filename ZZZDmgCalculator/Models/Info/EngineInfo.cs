@@ -46,14 +46,12 @@ public class EngineInfo : BaseInfo {
 		for (var i = 0; i < Passives.Count; i++)
 		{
 			var buffInfo = Passives[i];
-			buffInfo.DisplayName = lang[$"Buffs.Engines.{Id}.{i}"];
-			;
-			buffInfo.Description = lang[$"Buffs.Engines.{Id}.{i}.Desc"];
+			buffInfo.Id = $"Buffs.Engines.{Id}.{i}";
+			buffInfo.DisplayName = lang[buffInfo.Id];
+			buffInfo.Description = lang[$"{buffInfo.Id}.Desc"];
 		}
-		if (Skill != null)
-		{
-			Skill.DisplayName = lang[$"Skills.Engines.{Id}"];
-			Skill.Description = lang[$"Skills.Engines.{Id}.Desc"];
-		}
+		if (Skill == null) return;
+		Skill.DisplayName = lang[$"Skills.Engines.{Id}"];
+		Skill.Description = lang[$"Skills.Engines.{Id}.Desc"];
 	}
 }
