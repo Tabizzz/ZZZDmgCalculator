@@ -15,6 +15,11 @@ public class StatModifier {
 	/// </summary>
 	public bool Shared { get; set; }
 	
+	/// <summary>
+	/// If true, this stat modifier gets it value from an agent stat.
+	/// </summary>
+	public bool Agent { get; set; }
+	
 	public StatModifier WithValue(double value) => new()
 	{
 		Stat = Stat,

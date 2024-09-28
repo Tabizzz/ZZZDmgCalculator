@@ -6,26 +6,29 @@ using System.Text.Json.Serialization;
 /// List of agents available in the game.
 /// </summary>
 [JsonConverter(typeof(JsonStringEnumConverter))]
-public enum Agents
-{
+public enum Agents {
 	Rina,
+	Nicole,
+	Lucy,
+	Soukaku,
+
 	Anby,
-	Anton,
+	Koleda,
+	Qingyi,
+	Lycaon,
+
 	Ben,
+	Seth,
+
+	Grace,
+	Jane,
+	Piper,
+
+	Anton,
 	Billy,
 	Corin,
 	Ellen,
-	Grace,
-	Jane,
-	Koleda,
-	Nicole,
-	Lucy,
 	Nekomata,
-	Piper,
-	Qingyi,
-	Seth,
 	N11,
-	Soukaku,
-	Lycaon,
 	ZhuYuan
 }

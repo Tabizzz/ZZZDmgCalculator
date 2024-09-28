@@ -35,6 +35,9 @@ public class InfoService(HttpClient http, LangService lang) {
 	
 	Dictionary<Stats, StatInfo> _stats = null!;
 	public StatInfo this[Stats item] => _stats[item];
+	
+	Dictionary<Agents, AgentInfo> _agents = null!;
+	public AgentInfo this[Agents item] => _agents[item];
 
 	public async Task LoadAll() {
 		_factions = await Load<Factions, BaseInfo>(Paths.FactionsInfoUrl);
@@ -46,6 +49,7 @@ public class InfoService(HttpClient http, LangService lang) {
 		_discs = await Load<Discs, DiscInfo>(Paths.DiscsInfoUrl);
 		_engines = await Load<Engines, EngineInfo>(Paths.EnginesInfoUrl);
 		_stats = await Load<Stats, StatInfo>(Paths.StatsInfoUrl);
+		_agents = await Load<Agents, AgentInfo>(Paths.AgentsInfoUrl);
 	}
 
 	async Task<Dictionary<T, TInfo>> Load<T, TInfo>(string url) where TInfo : BaseInfo where T : struct, Enum {

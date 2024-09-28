@@ -38,6 +38,11 @@ public class BuffInfo : BaseInfo {
 	[JsonInclude]
 	internal List<StatModifier> Buffs { get; set; } = [];
 	public StatModifier? Buff { get; set; }
+	
+	/// <summary>
+	/// Mostly used for buffs from cores passive, specifies the maximum amount of the stat that can be applied.
+	/// </summary>
+	public double? BuffLimit { get; set; }
 
 	[JsonIgnore]
 	public List<StatModifier> BuffList
