@@ -86,7 +86,7 @@
 	EngineState? _state;
 
 	protected override void OnInitialized() {
-		_state = new EngineState(Info[Engines.Stinger]);
+		_state = new(Info[Engines.Stinger]);
 		_state.UpdateActivePassives();
 	}
 

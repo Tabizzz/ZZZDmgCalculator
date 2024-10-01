@@ -1,11 +1,9 @@
 namespace ZZZDmgCalculator.Models.Enum;
 
-using System.Text.Json.Serialization;
-
 /// <summary>
 /// Stats enum, contains all the stats that can be modified by engines, skills, discs, etc.
 /// </summary>
-[JsonConverter(typeof(JsonStringEnumConverter))]
+
 public enum Stats {
 	// Base stats
 	Atk,

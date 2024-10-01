@@ -1,0 +1,29 @@
+namespace ZZZDmgCalculator.Data.Discs;
+
+using Models.Enum;
+using Models.Info;
+using static Models.Enum.Discs;
+using static Models.Enum.Stats;
+
+[UrlTemplate("icons/discs/Icon_{Id}.webp")]
+[InfoData<Discs>(ChaoticMetal)]
+public class ChaoticMetalData {
+	public readonly static DiscInfo Data = new()
+	{
+		Id = nameof(ChaoticMetal),
+		StatBuff = new()
+		{
+			Stat = EtherDmg,
+			Value = 10
+		},
+		FullSet = new()
+		{
+			Modifiers = new StatModifier
+			{
+				Stat = DmgTaken,
+				Enemy = true,
+				Value = 18
+			}
+		}
+	};
+}

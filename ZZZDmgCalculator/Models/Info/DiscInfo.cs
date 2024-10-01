@@ -10,7 +10,7 @@ public class DiscInfo : BaseInfo {
 
 	public string? Condition { get; set; }
 
-	public override void PostLoad(LangService lang, ModelInfo info) {
+	public override void PostLoad(LangService lang) {
 		if (FullSet != null)
 		{
 			FullSets.Insert(0, FullSet);

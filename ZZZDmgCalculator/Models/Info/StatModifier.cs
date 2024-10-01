@@ -1,5 +1,6 @@
 namespace ZZZDmgCalculator.Models.Info;
 
+using System.Diagnostics.CodeAnalysis;
 using Enum;
 
 public class StatModifier {

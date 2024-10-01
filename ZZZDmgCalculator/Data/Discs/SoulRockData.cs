@@ -1,0 +1,26 @@
+namespace ZZZDmgCalculator.Data.Discs;
+
+using Models.Enum;
+using Models.Info;
+
+[InfoData<Discs>(Discs.SoulRock)]
+public class SoulRockData {
+	public readonly static DiscInfo Data = new()
+	{
+		Id = nameof(Discs.SoulRock),
+		StatBuff = new()
+		{
+			Stat = Stats.Def,
+			Value = 16,
+			Type = StatModifiers.BasePercent
+		},
+		FullSet = new()
+		{
+			Modifiers = new StatModifier
+			{
+				Stat = Stats.DmgReduction,
+				Value = 40
+			}
+		}
+	};
+}

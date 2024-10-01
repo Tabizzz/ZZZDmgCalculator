@@ -1,7 +1,5 @@
 namespace ZZZDmgCalculator.Models.Info;
 
-using Enum;
-
 public class DiscStatInfo {
 
 	public int[]? MainDiscs { get; set; }

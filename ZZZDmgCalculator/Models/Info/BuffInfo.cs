@@ -2,6 +2,7 @@ namespace ZZZDmgCalculator.Models.Info;
 
 using System.Text.Json.Serialization;
 using Enum;
+using Util;
 
 public class BuffInfo : BaseInfo {
 	public string Description { get; set; } = string.Empty;
@@ -12,15 +13,12 @@ public class BuffInfo : BaseInfo {
 	/// </summary>
 	public int Stacks { get; set; }
 	
-	/// <summary>
-	/// Used to specify this buff can scale, for example with level or engine refinement.
-	/// </summary>
-	public string? Scale { get; set; }
+	public double[]?[]? Scales { get; set; }
     
 	/// <summary>
 	/// A condition that must be met for this buff to be applied or enabled.
 	/// </summary>
-    public string? Condition { get; set; }
+    public Predicate<SkillInfo>? SkillCondition { get; set; }
 	
 	public bool Pass { get; set; }
 	
@@ -35,24 +33,12 @@ public class BuffInfo : BaseInfo {
 	/// </summary>
 	public int? RequiredStacks { get; set; }
 	
-	[JsonInclude]
-	internal List<StatModifier> Buffs { get; set; } = [];
-	public StatModifier? Buff { get; set; }
+	public  SingleList<StatModifier> Modifiers { get; set; } = [];
 	
 	/// <summary>
 	/// Mostly used for buffs from cores passive, specifies the maximum amount of the stat that can be applied.
 	/// </summary>
 	public double? BuffLimit { get; set; }
-
-	[JsonIgnore]
-	public List<StatModifier> BuffList
-	{
-		get
-		{
-			if (Buff is null) return Buffs;
-			Buffs.Insert(0, Buff);
-			Buff = null;
-			return Buffs;
-		}
-	}
+	
+	public static implicit operator BuffInfo(StatModifier d) => new() { Modifiers = [d] };
 }

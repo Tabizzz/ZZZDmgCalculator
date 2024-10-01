@@ -21,5 +21,5 @@ public class SkillInfo {
 
 	public int Ticks { get; set; } = 1;
 
-	public string? Scale { get; set; }
+	public double[]? Scales { get; set; }
 }
