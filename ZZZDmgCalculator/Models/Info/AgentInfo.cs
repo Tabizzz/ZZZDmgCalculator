@@ -2,6 +2,7 @@ namespace ZZZDmgCalculator.Models.Info;
 
 using System.Text.Json.Serialization;
 using Enum;
+using Util;
 
 public class AgentInfo : BaseInfo {
 
@@ -31,7 +32,7 @@ public class AgentInfo : BaseInfo {
 	/// </summary>
 	public required double[] FinalStats { get; set; }
 
-	public BuffInfo? CoreBuff { get; set; }
+	public SingleList<BuffInfo> CoreBuff { get; set; } = [];
 
 	public BuffInfo? AdditionalBuff { get; set; }
 

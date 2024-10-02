@@ -45,7 +45,7 @@ public class RinaData {
 			Templates["Rina.Def"],
 		],
 		FinalStats = [0, 83, 92, 93, 1.2],
-		CoreBuff = new()
+		CoreBuff = new BuffInfo
 		{
 			Scales = [[6, 7.5, 9, 10.2, 10.8, 11.4, 12]],
 			Modifiers =

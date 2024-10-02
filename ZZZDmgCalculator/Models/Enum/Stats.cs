@@ -43,5 +43,11 @@ public enum Stats {
 	BonusDmg = 75,
 	DmgTaken,
 	DmgReduction,
-	StunDmg
+	StunDmg,
+	DmgRes,
+	ElectricRes,
+	EtherRes,
+	FireRes,
+	IceRes,
+	PhysicalRes,
 }

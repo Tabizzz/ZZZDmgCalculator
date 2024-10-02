@@ -34,7 +34,7 @@ public class NicoleData {
 			Templates["Nicole.Def"],
 		],
 		FinalStats = [0, 88, 93, 99, 1.2],
-		CoreBuff = new()
+		CoreBuff = new BuffInfo
 		{
 			Scales = [[-20, -25, -30, -34, -36, -38, -40]],
 			Modifiers = new StatModifier
