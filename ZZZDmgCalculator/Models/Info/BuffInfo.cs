@@ -14,10 +14,11 @@ public class BuffInfo : BaseInfo {
 	public int Stacks { get; set; }
 	
 	public double[]?[]? Scales { get; set; }
-    
+	
 	/// <summary>
 	/// A condition that must be met for this buff to be applied or enabled.
 	/// </summary>
+	[JsonIgnore]
     public Predicate<SkillInfo>? SkillCondition { get; set; }
 	
 	public bool Pass { get; set; }

@@ -2,6 +2,7 @@ namespace ZZZDmgCalculator.Data.Agents;
 
 using Models.Enum;
 using Models.Info;
+using static AgentScales;
 
 [InfoData<Agents>(Agents.Nicole)]
 public class NicoleData {
@@ -14,6 +15,7 @@ public class NicoleData {
 		Specialty = Specialties.Support,
 		AttackType = AttackTypes.Strike,
 		DodgeType = DodgeTypes.Parry,
+		AdditionalCondition = BasicAdditionalCondition,
 		CoreStats =
 		[
 			new()
@@ -27,9 +29,9 @@ public class NicoleData {
 		],
 		BaseStats =
 		[
-			AgentScales.Templates["Nicole.Atk"],
-			AgentScales.Templates["Nicole.Hp"],
-			AgentScales.Templates["Nicole.Def"],
+			Templates["Nicole.Atk"],
+			Templates["Nicole.Hp"],
+			Templates["Nicole.Def"],
 		],
 		FinalStats = [0, 88, 93, 99, 1.2],
 		CoreBuff = new()

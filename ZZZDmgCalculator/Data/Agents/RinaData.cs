@@ -24,6 +24,7 @@ public class RinaData {
 		Specialty = Support,
 		AttackType = Strike,
 		DodgeType = Evasion,
+		AdditionalCondition = BasicAdditionalCondition,
 		CoreStats =
 		[
 			new()

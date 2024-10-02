@@ -2,6 +2,7 @@ namespace ZZZDmgCalculator.Data.Agents;
 
 using Models.Enum;
 using Models.Info;
+using static AgentScales;
 
 [UrlTemplate("icons/agents/Agent_{Icon}_Icon.webp")]
 [InfoData<Agents>(Agents.Lucy)]
@@ -15,6 +16,7 @@ public class LucyData {
 		Specialty = Specialties.Support,
 		AttackType = AttackTypes.Strike,
 		DodgeType = DodgeTypes.Parry,
+		AdditionalCondition = BasicAdditionalCondition,
 		CoreStats =
 		[
 			new()
@@ -30,9 +32,9 @@ public class LucyData {
 		],
 		BaseStats =
 		[
-			AgentScales.Templates["Lucy.Atk"],
-			AgentScales.Templates["Lucy.Hp"],
-			AgentScales.Templates["Lucy.Def"],
+			Templates["Lucy.Atk"],
+			Templates["Lucy.Hp"],
+			Templates["Lucy.Def"],
 		],
 		FinalStats = [0, 86, 93, 94, 1.2],
 		Abilities =
@@ -191,7 +193,7 @@ public class LucyData {
 				Buffs = new BuffInfo
 				{
 					BuffLimit = 600,
-					Scales = [AgentScales.Templates["Lucy.b1"], AgentScales.Templates["Lucy.b2"]],
+					Scales = [Templates["Lucy.b1"], Templates["Lucy.b2"]],
 					Modifiers =
 					[
 						new() { Stat = Stats.Atk, Type = StatModifiers.BasePercent, Shared = true, Agent = true },

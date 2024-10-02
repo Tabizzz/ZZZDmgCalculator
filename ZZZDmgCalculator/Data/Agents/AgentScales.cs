@@ -1,5 +1,8 @@
 namespace ZZZDmgCalculator.Data.Agents;
 
+using Models.Enum;
+using Models.Info;
+
 public static class AgentScales {
 	public readonly static Dictionary<string, double[]> Templates = new()
 	{
@@ -17,4 +20,6 @@ public static class AgentScales {
 		["Lucy.b1"] = [13.8, 14.6, 15.4, 16.2, 17.0, 17.8, 18.6, 19.4, 20.2, 21.0, 21.8, 22.6, 23.4, 24.2, 25.0, 25.8],
 		["Lucy.b2"] = [44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100, 104]
 	};
+	
+	public static bool BasicAdditionalCondition(AgentInfo agent, AgentInfo target) => agent.Attribute == target.Attribute || agent.Faction == target.Faction;
 }
