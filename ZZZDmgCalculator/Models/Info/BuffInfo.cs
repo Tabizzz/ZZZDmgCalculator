@@ -21,6 +21,12 @@ public class BuffInfo : BaseInfo {
 	[JsonIgnore]
     public Predicate<SkillInfo>? SkillCondition { get; set; }
 	
+	/// <summary>
+	/// A condition that must be met for this buff to be applied or enabled.
+	/// </summary>
+	[JsonIgnore]
+	public Predicate<AbilityInfo>? AbilityCondition { get; set; }
+	
 	public bool Pass { get; set; }
 	
 	/// <summary>

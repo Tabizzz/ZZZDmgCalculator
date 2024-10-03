@@ -14,5 +14,6 @@ public enum Skills
 	
 	Chain,
 	Ex,
-	Dash
+	Dash,
+	Quick
 }

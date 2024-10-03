@@ -61,30 +61,31 @@ public class RinaData {
 		},
 		Abilities =
 		[
-			new()
+			new()// Basic Attack: Whack the Dimwit
 			{
+				Id = "WhacktheDimwit",
 				Category = Basic,
 				Skills =
 				[
-					new()
+					new()// 1st-Hit DMG Multiplier (%)
 					{
 						Type = Basic,
 						DmgType = Physical,
 						Scales = [44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100, 104]
 					},
-					new()
+					new()// 2nd-Hit DMG Multiplier (%)
 					{
 						Type = Basic,
 						DmgType = Physical,
 						Scales = [111.4, 121.6, 131.8, 142, 152.2, 162.4, 172.6, 182.8, 193, 203.2, 213.4, 223.6, 233.8, 244, 254.2, 264.4]
 					},
-					new()
+					new()// 3rd-Hit DMG Multiplier (%)
 					{
 						Type = Basic,
 						DmgType = Electric,
-						Scales = [117.1, 127.8, 138.5, 149.2, 159.9, 170.6, 181.3, 192, 202.7, 213.4, 224.1, 234.8, 245.5, 256.2, 266.9, 277.6]
+						Scales = [117.1, 127.8, 138.5, 149.2, 159.9, 170.6, 181.3, 192.0, 202.7, 213.4, 224.1, 234.8, 245.5, 256.2, 266.9, 277.6]
 					},
-					new()
+					new()// 4th-Hit DMG Multiplier (%)
 					{
 						Type = Basic,
 						DmgType = Electric,
@@ -92,12 +93,13 @@ public class RinaData {
 					}
 				]
 			},
-			new()
+			new()// Basic Attack: Shoo the Fool
 			{
+				Id = "ShootheFool",
 				Category = Basic,
 				Skills =
 				[
-					new()
+					new()// DMG Multiplier (%)
 					{
 						Type = Basic,
 						DmgType = Electric,
@@ -105,12 +107,13 @@ public class RinaData {
 					}
 				]
 			},
-			new()
+			new()// Dash Attack: Sudden Surprise
 			{
+				Id = "SuddenSurprise",
 				Category = Dodge,
 				Skills =
 				[
-					new()
+					new()// DMG Multiplier (%)
 					{
 						Type = Dash,
 						DmgType = Physical,
@@ -118,12 +121,13 @@ public class RinaData {
 					}
 				]
 			},
-			new()
+			new()// Dodge Counter: Bangboo Callback
 			{
+				Id = "BangbooCallback",
 				Category = Dodge,
 				Skills =
 				[
-					new()
+					new()// DMG Multiplier (%)
 					{
 						Type = Dodge,
 						DmgType = Electric,
@@ -131,25 +135,27 @@ public class RinaData {
 					}
 				]
 			},
-			new()
+			new()// Quick Assist: Duple Meter Allemande
 			{
+				Id = "DupleMeterAllemande",
 				Category = Assist,
 				Skills =
 				[
-					new()
+					new()// DMG Multiplier (%)
 					{
-						Type = Assist,
+						Type = Quick,
 						DmgType = Electric,
 						Scales = [122.6, 133.8, 145.0, 156.2, 167.4, 178.6, 189.8, 201.0, 212.2, 223.4, 234.6, 245.8, 257.0, 268.2, 279.4, 290.6]
 					}
 				]
 			},
-			new()
+			new()// Assist Follow-Up: Quadruple Meter Gavotte
 			{
+				Id = "QuadrupleMeterGavotte",
 				Category = Assist,
 				Skills =
 				[
-					new()
+					new()// DMG Multiplier (%)
 					{
 						Type = Assist,
 						DmgType = Electric,
@@ -157,12 +163,13 @@ public class RinaData {
 					}
 				]
 			},
-			new()
+			new()// Special Attack: Beat the Blockhead
 			{
+				Id = "BeattheBlockhead",
 				Category = Special,
 				Skills =
 				[
-					new()
+					new()// DMG Multiplier (%)
 					{
 						Type = Special,
 						DmgType = Electric,
@@ -170,12 +177,13 @@ public class RinaData {
 					}
 				]
 			},
-			new()
+			new()// EX Special Attack: Dimwit Disappearing Trick
 			{
+				Id = "DimwitDisappearingTrick",
 				Category = Special,
 				Skills =
 				[
-					new()
+					new()// DMG Multiplier (%)
 					{
 						Type = Ex,
 						DmgType = Electric,
@@ -183,12 +191,13 @@ public class RinaData {
 					}
 				]
 			},
-			new()
+			new()// Chain Attack: Code of Conduct
 			{
-				Category = Ultimate,
+				Id = "CodeofConduct",
+				Category = Chain,
 				Skills =
 				[
-					new()
+					new()// DMG Multiplier (%)
 					{
 						Type = Chain,
 						DmgType = Electric,
@@ -196,12 +205,13 @@ public class RinaData {
 					}
 				]
 			},
-			new()
+			new()// Ultimate: The Queen's Attendants
 			{
-				Category = Ultimate,
+				Id = "TheQueensAttendants",
+				Category = Chain,
 				Skills =
 				[
-					new()
+					new()// DMG Multiplier (%)
 					{
 						Type = Ultimate,
 						DmgType = Electric,

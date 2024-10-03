@@ -48,5 +48,10 @@ public static class SkillsData {
 			Id = nameof(Skills.Dash),
 			Icon = "Dodge",
 		},
+		[Skills.Quick] = new()
+		{
+			Id = nameof(Skills.Quick),
+			Icon = "Assist_Attack",
+		},
 	};
 }

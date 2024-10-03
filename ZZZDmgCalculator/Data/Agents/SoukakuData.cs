@@ -13,7 +13,7 @@ using static Models.Enum.StatModifiers;
 using static Models.Enum.Stats;
 using static Models.Info.DodgeTypes;
 
-[InfoData<Agents>(Rina)]
+[InfoData<Agents>(Soukaku)]
 public class SoukakuData {
 	public readonly static AgentInfo Data = new()
 	{
@@ -276,7 +276,7 @@ public class SoukakuData {
 		],
 		Cinema =
 		{	
-			[4] = new StatModifier { Stat = IceRes, Value = -10 },	
+			[4] = new StatModifier { Stat = IceRes, Value = 10 },	
 			[6] = new StatModifier { Stat = BonusDmg, Value = 45 }
 		}
 	};
