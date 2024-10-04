@@ -17,5 +17,7 @@ public enum Discs
 	SoulRock,
 	SwingJazz,
 	ThunderMetal,
-	WoodpeckerElectro
+	WoodpeckerElectro,
+	ChaosJazz,
+	ProtoPunk
 }

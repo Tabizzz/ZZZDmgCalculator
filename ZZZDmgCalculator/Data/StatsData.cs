@@ -370,6 +370,7 @@ public class StatsData {
 				}
 			]
 		},
+		[ShieldPower] = new() { Id = nameof(ShieldPower) },
 
 		[ElectricCritDmg] = new() { Id = nameof(ElectricCritDmg) },
 		[EtherCritDmg] = new() { Id = nameof(EtherCritDmg) },

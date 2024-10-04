@@ -15,7 +15,7 @@ public class FangedMetalData {
 		},
 		// I dont know if the full set is a bonus damage buff for agent or a dmg taken debuff for enemy.
 		// I am assuming it is a dmg taken debuff for enemy but it need more deep testing.
-		FullSet = new()
+		Buffs = new BuffInfo()
 		{
 			Modifiers = new StatModifier
 			{

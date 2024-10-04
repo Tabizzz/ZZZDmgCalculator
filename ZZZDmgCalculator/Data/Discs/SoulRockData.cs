@@ -2,6 +2,7 @@ namespace ZZZDmgCalculator.Data.Discs;
 
 using Models.Enum;
 using Models.Info;
+using Util;
 
 [InfoData<Discs>(Discs.SoulRock)]
 public class SoulRockData {
@@ -14,7 +15,7 @@ public class SoulRockData {
 			Value = 16,
 			Type = StatModifiers.BasePercent
 		},
-		FullSet = new()
+		Buffs = new BuffInfo()
 		{
 			Modifiers = new StatModifier
 			{

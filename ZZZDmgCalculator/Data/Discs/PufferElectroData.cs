@@ -6,17 +6,17 @@ using static Models.Enum.Skills;
 
 [InfoData<Discs>(Discs.PufferElectro)]
 public class PufferElectroData {
-	public readonly static DiscInfo Data = new()
+	public readonly static DiscInfo Data = new ()
 	{
 		Id = nameof(Discs.PufferElectro),
-		StatBuff = new()
+		StatBuff = new ()
 		{
 			Stat = Stats.PenRatio,
 			Value = 10
 		},
-		FullSets =
+		Buffs =
 		[
-			new()
+			new ()
 			{
 				Type = BuffTrigger.Permanent,
 				SkillCondition = skill => skill.Type is Ultimate,
@@ -27,7 +27,7 @@ public class PufferElectroData {
 				}
 			},
 
-			new()
+			new ()
 			{
 				Modifiers = new StatModifier
 				{

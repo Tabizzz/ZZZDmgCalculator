@@ -62,6 +62,8 @@ public static class EngineScales {
 		["Cushion.Buff1"] = [25, 31.5, 38, 44, 50],
 		["Suppressor.Sub"] = [19.2, 19.2, 25, 25, 30.7, 30.7, 36.5, 36.5, 42.2, 42.2, 48, 48],
 		["Suppressor.Buff"] = [15, 18.8, 22.6, 26.4, 30],
-		["Suppressor.Buff1"] = [35, 43.5, 52, 60.5, 70]
+		["Suppressor.Buff1"] = [35, 43.5, 52, 60.5, 70],
+		["TuskOfFury.Buff"] = [30, 38, 46, 54, 60],
+		["TuskOfFury.Buff1"] = [18, 22.5, 27, 31.5, 36]
 	};
 }

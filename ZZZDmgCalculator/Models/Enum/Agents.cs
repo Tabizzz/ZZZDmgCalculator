@@ -17,6 +17,7 @@ public enum Agents {
 
 	Ben,
 	Seth,
+	Caesar,
 
 	Grace,
 	Jane,

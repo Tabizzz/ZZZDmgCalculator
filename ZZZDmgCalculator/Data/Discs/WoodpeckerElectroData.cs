@@ -2,6 +2,7 @@ namespace ZZZDmgCalculator.Data.Discs;
 
 using Models.Enum;
 using Models.Info;
+using Util;
 
 [InfoData<Discs>(Discs.WoodpeckerElectro)]
 public class WoodpeckerElectroData {
@@ -13,7 +14,7 @@ public class WoodpeckerElectroData {
 			Stat = Stats.CritRate,
 			Value = 8
 		},
-		FullSet = new()
+		Buffs = new BuffInfo
 		{
 			Type = BuffTrigger.Stack,
 			Stacks = 3,

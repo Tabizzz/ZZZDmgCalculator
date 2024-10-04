@@ -2,6 +2,7 @@ namespace ZZZDmgCalculator.Data.Discs;
 
 using Models.Enum;
 using Models.Info;
+using Util;
 
 [InfoData<Discs>(Discs.ThunderMetal)]
 public class ThunderMetalData {
@@ -13,7 +14,7 @@ public class ThunderMetalData {
 			Stat = Stats.ElectricDmg,
 			Value = 10
 		},
-		FullSet = new()
+		Buffs = new BuffInfo
 		{
 			Modifiers = new StatModifier
 			{

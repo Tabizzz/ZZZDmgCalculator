@@ -48,6 +48,8 @@ public enum Engines
 	Transmorpher,
 	Bunny,
 	Cylinder,
+	
+	TuskOfFury,
 	#endregion
 	
 	#region Anomaly

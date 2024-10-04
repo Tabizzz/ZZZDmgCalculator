@@ -2,6 +2,7 @@ namespace ZZZDmgCalculator.Data.Discs;
 
 using Models.Enum;
 using Models.Info;
+using Util;
 
 [InfoData<Discs>(Discs.InfernoMetal)]
 public class InfernoMetalData {
@@ -13,7 +14,7 @@ public class InfernoMetalData {
 			Stat = Stats.FireDmg,
 			Value = 10
 		},
-		FullSet = new()
+		Buffs = new BuffInfo()
 		{
 			Modifiers = new StatModifier
 			{

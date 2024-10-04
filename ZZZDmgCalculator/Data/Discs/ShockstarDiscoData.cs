@@ -5,10 +5,10 @@ using Models.Info;
 
 [InfoData<Discs>(Discs.ShockstarDisco)]
 public class ShockstarDiscoData {
-	public readonly static DiscInfo Data = new()
+	public readonly static DiscInfo Data = new ()
 	{
 		Id = nameof(Discs.ShockstarDisco),
-		StatBuff = new()
+		StatBuff = new ()
 		{
 			Stat = Stats.Impact,
 			Value = 6,

@@ -6,17 +6,17 @@ using static Models.Enum.Skills;
 
 [InfoData<Discs>(Discs.PolarMetal)]
 public class PolarMetalData {
-	public readonly static DiscInfo Data = new()
+	public readonly static DiscInfo Data = new ()
 	{
 		Id = nameof(Discs.PolarMetal),
-		StatBuff = new()
+		StatBuff = new ()
 		{
 			Stat = Stats.IceDmg,
 			Value = 10
 		},
-		FullSets =
+		Buffs =
 		[
-			new()
+			new ()
 			{
 				Type = BuffTrigger.Permanent,
 				SkillCondition = skill => skill.Type is Basic or Dash,
@@ -27,7 +27,7 @@ public class PolarMetalData {
 				}
 			},
 
-			new()
+			new ()
 			{
 				SkillCondition = skill => skill.Type is Basic or Dash,
 				Modifiers = new StatModifier

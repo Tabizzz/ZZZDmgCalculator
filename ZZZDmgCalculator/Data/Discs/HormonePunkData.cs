@@ -14,7 +14,7 @@ public class HormonePunkData {
 			Value = 10,
 			Type = StatModifiers.BasePercent
 		},
-		FullSet = new()
+		Buffs = new BuffInfo()
 		{
 			Modifiers = new StatModifier
 			{

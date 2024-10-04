@@ -25,6 +25,8 @@ public enum Stats {
 	IceDmg,
 	PhysicalDmg,
 	
+	ShieldPower,
+	
 	// special anomaly stats, this stats are hidden by default unless theis value is not 0, these are increased by specific agents or skills.
 	// for example jane core skill add physical anomaly crit rate and crit dmg.
 	ElectricCritDmg = 50,

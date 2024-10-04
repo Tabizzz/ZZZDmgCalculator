@@ -16,7 +16,7 @@ public class ChaoticMetalData {
 			Stat = EtherDmg,
 			Value = 10
 		},
-		FullSet = new()
+		Buffs = new BuffInfo()
 		{
 			Modifiers = new StatModifier
 			{

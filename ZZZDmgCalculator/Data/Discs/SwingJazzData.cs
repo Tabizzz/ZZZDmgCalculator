@@ -2,6 +2,7 @@ namespace ZZZDmgCalculator.Data.Discs;
 
 using Models.Enum;
 using Models.Info;
+using Util;
 
 [InfoData<Discs>(Discs.SwingJazz)]
 public class SwingJazzData {
@@ -14,7 +15,7 @@ public class SwingJazzData {
 			Value = 20,
 			Type = StatModifiers.BasePercent
 		},
-		FullSet = new()
+		Buffs = new BuffInfo
 		{
 			Modifiers = new StatModifier
 			{
