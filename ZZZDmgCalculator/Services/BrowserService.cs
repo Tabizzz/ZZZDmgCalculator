@@ -20,6 +20,4 @@ public struct BrowserDimension {
 	public int Width { get; set; }
 
 	public int Height { get; set; }
-
-	public override string ToString() => $"Width: {Width}, Height: {Height}";
 }
