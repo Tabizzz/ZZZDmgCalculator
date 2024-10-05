@@ -8,9 +8,9 @@ public class BaseInfo {
 
 	public string DisplayName { get; set; } = string.Empty;
 	
-	public string Icon { get; set; } = string.Empty;
+	public string Icon { get; init; } = string.Empty;
 
 	public string Url { get; set; } = string.Empty;
 	
-	public virtual void PostLoad(LangService lang, ModelInfo info) { }
+	public virtual void PostLoad(LangService lang) { }
 }

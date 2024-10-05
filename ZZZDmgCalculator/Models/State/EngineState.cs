@@ -36,14 +36,15 @@ public class EngineState(EngineInfo info) {
 
 	static List<StatModifier> GetInitialBuff(BuffInfo buff, EngineInfo engineInfo) {
 		var buffs = new List<StatModifier>();
-		foreach (var statModifier in buff.BuffList)
+		for (var i = 0; i < buff.Modifiers.Count; i++)
 		{
-			if (buff.Scale is not null && statModifier.Value == 0)
+			var statModifier = buff.Modifiers[i];
+			if (buff.Scales is not null && statModifier.Value == 0)
 			{
 				// If the buff is scaling, we need to get the correct value from the scale.
-				var scale = engineInfo.Scales[buff.Scale];
-				var value = scale[0]; // 0 means the refinement is 1.
-				buffs.Add(statModifier.WithValue(value));	
+				var scale = buff.Scales[i]!;
+				var value = scale[0];// 0 means the refinement is 1.
+				buffs.Add(statModifier.WithValue(value));
 			}
 			else
 			{
@@ -86,9 +87,9 @@ public class EngineState(EngineInfo info) {
 				for (var i = 0; i < passive.Buffs.Count; i++)
 				{
 					// check if the original modifier has value other than 0
-					if(passive.Info.Buffs[i].Value != 0) continue;
+					if(passive.Info.Modifiers[i].Value != 0) continue;
 					var buff = passive.Buffs[i];
-					var scale = info.Scales[passive.Info.Scale!];
+					var scale = passive.Info.Scales![i]!;
 					var value = scale[_refinement - 1];// refinement - 1 is the index of the scale.
 					buff.Value = value;
 				}

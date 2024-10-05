@@ -20,7 +20,7 @@ public class BuffState(BuffInfo info) {
 
 	public bool Active => info.Type switch { BuffTrigger.Stack => Stacks > 0, BuffTrigger.Switch => Enabled, _ => true };
 
-	public bool IsScaling => info.Scale is not null;
+	public bool IsScaling => info.Scales is not null;
 
 	public bool HasDependencies => info.Depends is not null;
 

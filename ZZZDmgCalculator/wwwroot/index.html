@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ZZZDmgCalculator</title>
     <base href="/" />
-    <link href="_content/Microsoft.FluentUI.AspNetCore.Components/css/reboot.css" rel="stylesheet" />
+    <link rel="stylesheet" href="_content/Radzen.Blazor/css/standard-dark.css">
     <link rel="stylesheet" href="css/app.css" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link href="ZZZDmgCalculator.styles.css" rel="stylesheet" />
@@ -17,8 +17,9 @@
 
 <body>
     <div id="app">
-        <div class="loading-background"></div>
-        <img src="icons/misc/Bangboo_Net_Loading.webp" class="loading-progress"/>
+        <div class="loading-progress">
+            <img src="icons/misc/Bangboo_Net_Loading.webp"/>
+        </div>
     </div>
 
     <div id="blazor-error-ui">
@@ -26,7 +27,9 @@
         <a href="." class="reload">Reload</a>
         <span class="dismiss">🗙</span>
     </div>
+    <script src="js/browser.js"></script>
     <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
 </body>
 

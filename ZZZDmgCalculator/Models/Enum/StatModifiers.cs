@@ -1,7 +1,5 @@
 namespace ZZZDmgCalculator.Models.Enum;
 
-using System.Text.Json.Serialization;
-
 /// <summary>
 /// List of all the possible stat modifiers.
 ///
@@ -14,7 +12,7 @@ using System.Text.Json.Serialization;
 /// the full formula, the rest of stats use the <see cref="Base"/> and <see cref="Combat"/> modifier
 /// only.
 /// </summary>
-[JsonConverter(typeof(JsonStringEnumConverter))]
+
 public enum StatModifiers {
 	/// <summary>
 	/// Base modifier

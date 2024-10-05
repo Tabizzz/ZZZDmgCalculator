@@ -3,19 +3,22 @@
 
 @if (ItemList is not null)
 {
-	<FluentTabs Orientation="Orientation.Vertical">
-		@foreach (var info in ItemList)
-		{
-			<FluentTab Label="@info.Id" Id="@info.Id">
-				<FluentLabel>Display Name: @info.DisplayName</FluentLabel>
-				<FluentLabel>Icon:</FluentLabel>
-				<img src="@info.Url" alt="@info.DisplayName"/>
-				<FluentLabel>Json:</FluentLabel>
-				<FluentTextArea Value="@JsonSerializer.Serialize(info, new JsonSerializerOptions { WriteIndented = true })"
-				                Rows="25"
-				                Style="width: 75%"/>
-			</FluentTab>
-		}
-
-	</FluentTabs>
+	<RadzenTabs TabPosition="TabPosition.Left">
+		<Tabs>
+			@foreach (var info in ItemList)
+			{
+				<RadzenTabsItem Text="@info.Id" Id="@info.Id">
+					<RadzenStack>
+						<RadzenLabel>Display Name: @info.DisplayName</RadzenLabel>
+						<RadzenLabel>Icon:</RadzenLabel>
+						<RadzenImage Path="@info.Url" AlternateText="@info.DisplayName" Style="width: min-content"/>
+						<RadzenLabel>Json:</RadzenLabel>
+						<RadzenTextArea Value="@JsonSerializer.Serialize(info, new JsonSerializerOptions { WriteIndented = true })"
+						                Rows="25"
+						                Style="width: 75%"/>
+					</RadzenStack>
+				</RadzenTabsItem>
+			}
+		</Tabs>
+	</RadzenTabs>
 }

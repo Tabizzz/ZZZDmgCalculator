@@ -1,20 +1,31 @@
 namespace ZZZDmgCalculator.Models.Info;
 
+using System.Diagnostics.CodeAnalysis;
 using Enum;
+using Util;
 
 public class StatModifier {
 	public required Stats Stat { get; set; }
+
 	public double Value { get; set; }
+
 	public StatModifiers Type { get; set; }
+
 	/// <summary>
 	/// If true, the modifier will be applied to the enemy.
 	/// </summary>
 	public bool Enemy { get; set; }
+
 	/// <summary>
 	/// If true, the modifier will be applied to the entire team and not just the owner.
 	/// </summary>
 	public bool Shared { get; set; }
-	
+
+	/// <summary>
+	/// If true, this stat modifier gets it value from an agent stat.
+	/// </summary>
+	public bool Agent { get; set; }
+
 	public StatModifier WithValue(double value) => new()
 	{
 		Stat = Stat,
@@ -23,17 +34,17 @@ public class StatModifier {
 		Enemy = Enemy,
 		Shared = Shared
 	};
-	
+
 	public bool IsCombatStat
 	{
 		get
 		{
-			if(Type == StatModifiers.Combat || Type == StatModifiers.CombatPercent || Type == StatModifiers.CombatFlat)
+			if (Type == StatModifiers.Combat || Type == StatModifiers.CombatPercent || Type == StatModifiers.CombatFlat)
 				return true;
 			return Stat > Stats.BonusDmg;
 		}
 	}
-	
+
 	public bool IsPercent
 	{
 		get
@@ -51,4 +62,6 @@ public class StatModifier {
 			};
 		}
 	}
+
+	public static implicit operator SingleList<BuffInfo>(StatModifier modifier) => [new() { Modifiers = [modifier] }];
 }

@@ -1,11 +1,9 @@
 namespace ZZZDmgCalculator.Models.Enum;
 
-using System.Text.Json.Serialization;
-
 /// <summary>
 /// List of ways to activate a buff.
 /// </summary>
-[JsonConverter(typeof(JsonStringEnumConverter))]
+
 public enum BuffTrigger {
 	/// <summary>
 	/// In switch mode the buff can de enabled or disabled.

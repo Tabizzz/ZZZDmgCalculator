@@ -1,11 +1,9 @@
 namespace ZZZDmgCalculator.Models.Enum;
 
-using System.Text.Json.Serialization;
-
 /// <summary>
 /// Stats enum, contains all the stats that can be modified by engines, skills, discs, etc.
 /// </summary>
-[JsonConverter(typeof(JsonStringEnumConverter))]
+
 public enum Stats {
 	// Base stats
 	Atk,
@@ -27,6 +25,8 @@ public enum Stats {
 	IceDmg,
 	PhysicalDmg,
 	
+	ShieldPower,
+	
 	// special anomaly stats, this stats are hidden by default unless theis value is not 0, these are increased by specific agents or skills.
 	// for example jane core skill add physical anomaly crit rate and crit dmg.
 	ElectricCritDmg = 50,
@@ -45,5 +45,11 @@ public enum Stats {
 	BonusDmg = 75,
 	DmgTaken,
 	DmgReduction,
-	StunDmg
+	StunDmg,
+	DmgRes,
+	ElectricRes,
+	EtherRes,
+	FireRes,
+	IceRes,
+	PhysicalRes,
 }
