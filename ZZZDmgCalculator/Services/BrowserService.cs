@@ -2,16 +2,27 @@ namespace ZZZDmgCalculator.Services;
 
 using Microsoft.JSInterop;
 using System.Threading.Tasks;
+using MessagePipe;
 
-public class BrowserService {
-	private readonly IJSRuntime _js;
+public class BrowserService(IJSRuntime js, IAsyncPublisher<BrowserDimension> publisher) {
 
-	public BrowserService(IJSRuntime js) {
-		_js = js;
+	public BrowserDimension Dimensions { get; private set; }
+
+	bool _initialized;
+
+	[JSInvokable]
+	public async Task OnResizeEvent(int width, int height) {
+		if (Dimensions.Width == width && Dimensions.Height == height) return;
+
+		Dimensions = new() { Width = width, Height = height };
+		await publisher.PublishAsync(Dimensions);
 	}
 
-	public async Task<BrowserDimension> GetDimensions() {
-		return await _js.InvokeAsync<BrowserDimension>("getDimensions");
+	public async Task Init() {
+		if (_initialized) return;
+		_initialized = true;
+		Dimensions = await js.InvokeAsync<BrowserDimension>("getDimensions");
+		await js.InvokeVoidAsync("registerViewportChangeCallback", DotNetObjectReference.Create(this));
 	}
 
 }

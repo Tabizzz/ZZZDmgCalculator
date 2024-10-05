@@ -14,6 +14,7 @@ builder.Services.AddSingleton<LangService>();
 builder.Services.AddSingleton<InfoService>();
 builder.Services.AddSingleton<BrowserService>();
 builder.Services.AddRadzenComponents();
+builder.Services.AddMessagePipe();
 
 var app = builder.Build();
 app.Services.GetService<InfoService>()!.LoadAll();
