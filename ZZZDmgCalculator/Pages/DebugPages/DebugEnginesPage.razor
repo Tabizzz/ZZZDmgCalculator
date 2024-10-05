@@ -18,7 +18,7 @@
 						Appearance="Appearance.Stealth"
 						Items="Enum.GetValues<AscensionState>()"
 						OptionText="state => state.ToString().Replace('A'.ToString(), string.Empty).Replace('_', '/')"
-						@bind-SelectedOption="_state.Ascension"
+						bind-SelectedOption="_state.Ascension"
 						Style="min-width: unset"/>
 				</FluentStack>
 				<FluentStack Orientation="Orientation.Horizontal" VerticalAlignment="VerticalAlignment.Center">
@@ -27,7 +27,7 @@
 						TOption="int"
 						Appearance="Appearance.Stealth"
 						Items="[1, 2, 3, 4, 5]"
-						@bind-SelectedOption="_state.Refinement"
+						bind-SelectedOption="_state.Refinement"
 						Style="min-width: unset"/>
 				</FluentStack>
 			</div>
@@ -45,7 +45,7 @@
 					@switch (buff.Info.Type)
 					{
 						case BuffTrigger.Permanent:
-							<FluentIcon Value="@(new Icons.Regular.Size24.Save())" />
+							<FluentIcon Value="" />
 							break;
 						case BuffTrigger.Switch:
 							<FluentSwitch Value="@buff.Enabled" ValueChanged="x => {buff.Enabled=x;_state.UpdateActivePassives();}"/>

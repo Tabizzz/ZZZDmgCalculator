@@ -387,6 +387,13 @@ public class StatsData {
 		[BonusDmg] = new() { Id = nameof(BonusDmg) },
 		[DmgTaken] = new() { Id = nameof(DmgTaken) },
 		[DmgReduction] = new() { Id = nameof(DmgReduction) },
-		[StunDmg] = new() { Id = nameof(StunDmg) }
+		[StunDmg] = new() { Id = nameof(StunDmg) },
+		
+		[DmgRes] = new() { Id = nameof(DmgRes) },
+		[ElectricRes] = new() { Id = nameof(ElectricRes) },
+		[EtherRes] = new() { Id = nameof(EtherRes) },
+		[FireRes] = new() { Id = nameof(FireRes) },
+		[IceRes] = new() { Id = nameof(IceRes) },
+		[PhysicalRes] = new() { Id = nameof(PhysicalRes) },
 	};
 }

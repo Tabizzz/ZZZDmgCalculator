@@ -4,41 +4,43 @@
 <PageTitle>Debug Info</PageTitle>
 
 
-<FluentTabs>
-<FluentTab Label="Stats" Id="Stats">
-		<DebugInfo ItemList="Enum.GetValues<Stats>().Select(x => Info[x])"/>
-	</FluentTab>
-	<FluentTab Label="Attack Engines" Id="Attack">
-		<DebugInfo ItemList="Enum.GetValues<Engines>().Skip((int)Engines.Pleniluna).Take(14).Select(x => Info[x])"/>
-	</FluentTab>
-	<FluentTab Label="Stun Engines" Id="Stun">
-		<DebugInfo ItemList="Enum.GetValues<Engines>().Skip((int)Engines.Revolver).Take(10).Select(x => Info[x])"/>
-	</FluentTab>
-	<FluentTab Label="Anomaly Engines" Id="Anomaly">
-		<DebugInfo ItemList="Enum.GetValues<Engines>().Skip((int)Engines.Charlie).Take(9).Select(x => Info[x])"/>
-	</FluentTab>
-	<FluentTab Label="Defense Engines" Id="Defense">
-		<DebugInfo ItemList="Enum.GetValues<Engines>().Skip((int)Engines.Inflection).Take(7).Select(x => Info[x])"/>
-	</FluentTab>
-	<FluentTab Label="Support Engines" Id="Support">
-		<DebugInfo ItemList="Enum.GetValues<Engines>().Take((int)Engines.Cradle + 1).Select(x => Info[x])"/>
-	</FluentTab>
-	<FluentTab Label="Discs" Id="Discs">
-		<DebugInfo ItemList="Enum.GetValues<Discs>().Select(x => Info[x])"/>
-	</FluentTab>
-	<FluentTab Label="Skills" Id="Skills">
-		<DebugInfo ItemList="Enum.GetValues<Skills>().Select(x => Info[x])"/>
-	</FluentTab>
-	<FluentTab Label="CoreSkills" Id="CoreSkills">
-		<DebugInfo ItemList="Enum.GetValues<CoreSkills>().Select(x => Info[x])"/>
-	</FluentTab>
-	<FluentTab Label="Attributes" Id="Attributes">
-		<DebugInfo ItemList="Enum.GetValues<Attributes>().Select(x => Info[x])"/>
-	</FluentTab>
-	<FluentTab Label="Specialties" Id="Specialties">
-		<DebugInfo ItemList="Enum.GetValues<Specialties>().Select(x => Info[x])"/>
-	</FluentTab>
-	<FluentTab Label="Factions" Id="Factions">
-		<DebugInfo ItemList="Enum.GetValues<Factions>().Select(x => Info[x])"/>
-	</FluentTab>
-</FluentTabs>
+<RadzenTabs>
+	<Tabs>
+		<RadzenTabsItem Text="Stats" Id="Stats">
+			<DebugInfo ItemList="Enum.GetValues<Stats>().Select(x => Info[x])"/>
+		</RadzenTabsItem>
+		<RadzenTabsItem Text="Attack Engines" Id="Attack">
+			<DebugInfo ItemList="Enum.GetValues<Engines>().Skip((int)Engines.Pleniluna).Take(14).Select(x => Info[x])"/>
+		</RadzenTabsItem>
+		<RadzenTabsItem Text="Stun Engines" Id="Stun">
+			<DebugInfo ItemList="Enum.GetValues<Engines>().Skip((int)Engines.Revolver).Take(10).Select(x => Info[x])"/>
+		</RadzenTabsItem>
+		<RadzenTabsItem Text="Anomaly Engines" Id="Anomaly">
+			<DebugInfo ItemList="Enum.GetValues<Engines>().Skip((int)Engines.Charlie).Take(9).Select(x => Info[x])"/>
+		</RadzenTabsItem>
+		<RadzenTabsItem Text="Defense Engines" Id="Defense">
+			<DebugInfo ItemList="Enum.GetValues<Engines>().Skip((int)Engines.Inflection).Take(7).Select(x => Info[x])"/>
+		</RadzenTabsItem>
+		<RadzenTabsItem Text="Support Engines" Id="Support">
+			<DebugInfo ItemList="Enum.GetValues<Engines>().Take((int)Engines.Cradle + 1).Select(x => Info[x])"/>
+		</RadzenTabsItem>
+		<RadzenTabsItem Text="Discs" Id="Discs">
+			<DebugInfo ItemList="Enum.GetValues<Discs>().Select(x => Info[x])"/>
+		</RadzenTabsItem>
+		<RadzenTabsItem Text="Skills" Id="Skills">
+			<DebugInfo ItemList="Enum.GetValues<Skills>().Select(x => Info[x])"/>
+		</RadzenTabsItem>
+		<RadzenTabsItem Text="CoreSkills" Id="CoreSkills">
+			<DebugInfo ItemList="Enum.GetValues<CoreSkills>().Select(x => Info[x])"/>
+		</RadzenTabsItem>
+		<RadzenTabsItem Text="Attributes" Id="Attributes">
+			<DebugInfo ItemList="Enum.GetValues<Attributes>().Select(x => Info[x])"/>
+		</RadzenTabsItem>
+		<RadzenTabsItem Text="Specialties" Id="Specialties">
+			<DebugInfo ItemList="Enum.GetValues<Specialties>().Select(x => Info[x])"/>
+		</RadzenTabsItem>
+		<RadzenTabsItem Text="Factions" Id="Factions">
+			<DebugInfo ItemList="Enum.GetValues<Factions>().Select(x => Info[x])"/>
+		</RadzenTabsItem>
+	</Tabs>
+</RadzenTabs>

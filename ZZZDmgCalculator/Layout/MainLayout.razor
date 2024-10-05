@@ -1,21 +1,21 @@
 ﻿@inherits LayoutComponentBase
 
-<FluentDesignTheme Mode="DesignThemeModes.Dark"/>
-
-<FluentLayout>
-	<FluentHeader>
-		ZZZDmgCalculator
-	</FluentHeader>
-	<FluentBodyContent Class="body-content">
+<RadzenLayout>
+	<RadzenHeader>
+		<RadzenStack AlignItems="AlignItems.Center" Orientation="Orientation.Horizontal" Gap="0" Style="height: 100%">
+			<RadzenLabel Text="ZZZDmgCalculator" class ="rz-p-1"/>
+		</RadzenStack>
+	</RadzenHeader>
+	<RadzenBody Class="body-content">
 		<ErrorBoundary>
 			<ChildContent>
-				<div class="content">
-					@Body
-				</div>
+				@Body
 			</ChildContent>
 			<ErrorContent Context="ex">
 				<div class="blazor-error-boundary">@ex.Message</div>
 			</ErrorContent>
 		</ErrorBoundary>
-	</FluentBodyContent>
-</FluentLayout>
+	</RadzenBody>
+</RadzenLayout>
+
+<RadzenComponents/>
