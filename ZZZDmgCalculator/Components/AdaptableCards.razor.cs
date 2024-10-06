@@ -4,10 +4,8 @@ using MessagePipe;
 using Microsoft.AspNetCore.Components;
 using Services;
 
-public partial class AdaptableCards : IDisposable {
-
-	IDisposable _disposable = null!;
-
+public partial class AdaptableCards {
+	
 	int _pageWith;
 
 	public int CardWith { get; private set; }
@@ -16,15 +14,8 @@ public partial class AdaptableCards : IDisposable {
 
 	[Parameter]
 	public RenderFragment ChildContent { get; set; } = null!;
-
-	public readonly List<AdaptableCard> Cards = [];
 	
-	protected override async Task OnInitializedAsync() {
-		_disposable = OnResize.Subscribe(OnResizeHandler);
-		await OnResizeHandler(await Browser.GetDimensionSafe(), CancellationToken.None);
-	}
-
-	ValueTask OnResizeHandler(BrowserDimension dimension, CancellationToken token) {
+	protected override void OnBrowserResize(BrowserDimension dimension) {
 		CardWith = dimension.Width switch
 		{
 			> 1920 => 450,
@@ -34,12 +25,6 @@ public partial class AdaptableCards : IDisposable {
 
 		Phone = dimension.Width < 576;
 
-		StateHasChanged();
-		Cards.ForEach(c=> c.Update());
-		return ValueTask.CompletedTask;
-	}
-
-	public void Dispose() {
-		_disposable.Dispose();
+		StateHasChanged(); 
 	}
 }

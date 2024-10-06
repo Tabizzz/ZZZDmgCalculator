@@ -1,6 +1,7 @@
 namespace ZZZDmgCalculator.Components;
 
 using Microsoft.AspNetCore.Components;
+using Services;
 
 public partial class AdaptableCard {
 	[CascadingParameter]
@@ -12,13 +13,7 @@ public partial class AdaptableCard {
 	[Parameter]
 	public string TabText { get; set; } = string.Empty;
 
-	public string CardStyle => $"width: {Parent!.CardWith}px;";
+	string CardStyle => $"width: {Parent!.CardWith}px;";
 
-	protected override void OnInitialized() {
-		Parent?.Cards.Add(this);
-	}
-
-	public void Update() {
-		StateHasChanged();
-	}
+	protected override void OnBrowserResize(BrowserDimension dimension) => StateHasChanged();
 }

@@ -1,0 +1,19 @@
+﻿@page "/"
+@inject StateService State
+@inject InfoService Info
+
+<AdaptableCards>
+	<AdaptableCard TabText="Overview">
+		<RadzenStack Orientation="Orientation.Horizontal">
+			<div class="agent-avatar">
+				<img src="@State.CurrentAgent.Info.Url" alt="@State.CurrentAgent.Info.Id"/>
+			</div>
+		</RadzenStack>
+	</AdaptableCard>
+	<AdaptableCard TabText="Party">
+		Corin
+	</AdaptableCard>
+	<AdaptableCard TabText="Skills">
+		Jane
+	</AdaptableCard>
+</AdaptableCards>

@@ -13,6 +13,7 @@ builder.Services.AddSingleton(_ => new HttpClient { BaseAddress = new(builder.Ho
 builder.Services.AddSingleton<LangService>();
 builder.Services.AddSingleton<InfoService>();
 builder.Services.AddSingleton<BrowserService>();
+builder.Services.AddSingleton<StateService>();
 builder.Services.AddRadzenComponents();
 builder.Services.AddMessagePipe();
 

@@ -1,7 +1,5 @@
+@inherits MainComponent
 @using MessagePipe
-@inject IAsyncSubscriber<BrowserDimension> OnResize
-@inject BrowserService Browser
-
 
 <CascadingValue Value="this" IsFixed="true">
 	@if (Phone)
