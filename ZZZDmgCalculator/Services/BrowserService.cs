@@ -9,6 +9,12 @@ public class BrowserService(IJSRuntime js, IAsyncPublisher<BrowserDimension> pub
 	public BrowserDimension Dimensions { get; private set; }
 
 	bool _initialized;
+	
+	public async Task<BrowserDimension> GetDimensionSafe() {
+		if (Dimensions is { Width: 0, Height: 0 })
+			Dimensions = await js.InvokeAsync<BrowserDimension>("getDimensions");
+		return Dimensions;
+	}
 
 	[JSInvokable]
 	public async Task OnResizeEvent(int width, int height) {
@@ -22,6 +28,7 @@ public class BrowserService(IJSRuntime js, IAsyncPublisher<BrowserDimension> pub
 		if (_initialized) return;
 		_initialized = true;
 		Dimensions = await js.InvokeAsync<BrowserDimension>("getDimensions");
+		await publisher.PublishAsync(Dimensions);
 		await js.InvokeVoidAsync("registerViewportChangeCallback", DotNetObjectReference.Create(this));
 	}
 

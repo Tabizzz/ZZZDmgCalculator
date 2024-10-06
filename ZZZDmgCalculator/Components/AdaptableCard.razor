@@ -1,0 +1,15 @@
+
+
+@if (Parent!.Phone)
+{
+	<RadzenTabsItem Text="@TabText" class="adaptive-tab-item">
+		@ChildContent
+	</RadzenTabsItem>
+}
+else
+{
+	<RadzenCard Style="@CardStyle" class="rz-border-radius-3">
+		@ChildContent
+	</RadzenCard>
+
+}

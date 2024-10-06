@@ -8,8 +8,22 @@ body {
 	min-height: 32px;
 }
 
-.rz-card {
-	min-width: 450px;
+.body-content > .rz-stack >.rz-card {
+	max-width: 450px;
+	min-width: 350px;
+}
+
+.body-content > .rz-stack {
+	width: min-content;
+	min-width: 100%;
+}
+
+.adaptive-tab-item {
+	width: 100%;
+}
+
+.adaptive-tab-item > a{
+	justify-content: center;
 }
 
 .loading-progress {
