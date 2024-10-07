@@ -50,6 +50,39 @@ body {
 	max-width: 75%;
 }
 
+.agent-avatar {
+	position: relative;
+	cursor: pointer;
+
+	background-color: #333534;
+	background-color: rgba(51, 53, 52, 1);
+
+	border-color: #000;
+	border-color: rgba(0,0,0,1);
+
+	border-style: solid;
+	border-width: .15rem;
+	border-radius: 1rem;
+	
+	width: 100px;
+	height: 120px;
+	overflow: hidden;
+	flex: none;
+}
+
+.rz-col {
+	display: flex;
+	justify-content: center;
+}
+
+.z-filter-menu > .rz-navigation-menu{
+	right: -50px;
+}
+
+.rz-dialog-content {
+	min-height: 300px;
+}
+
 #blazor-error-ui {
 	background: lightyellow;
 	bottom: 0;

@@ -4,17 +4,11 @@ using Microsoft.JSInterop;
 using System.Threading.Tasks;
 using MessagePipe;
 
-public class BrowserService(IJSRuntime js, IAsyncPublisher<BrowserDimension> publisher) {
+public class BrowserService(IJSRuntime js, IBufferedAsyncPublisher<BrowserDimension> publisher) {
 
 	public BrowserDimension Dimensions { get; private set; }
 
 	bool _initialized;
-	
-	public async Task<BrowserDimension> GetDimensionSafe() {
-		if (Dimensions is { Width: 0, Height: 0 })
-			Dimensions = await js.InvokeAsync<BrowserDimension>("getDimensions");
-		return Dimensions;
-	}
 
 	[JSInvokable]
 	public async Task OnResizeEvent(int width, int height) {

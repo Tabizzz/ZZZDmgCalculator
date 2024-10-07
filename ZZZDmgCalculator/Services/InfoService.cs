@@ -92,6 +92,8 @@ public class InfoService(LangService lang) {
 
 		return ret;
 	}
+	
+	public IEnumerable<KeyValuePair<Agents, AgentInfo>> AvailableAgents => _agents;
 
 	public string AgentRankIcon(AgentRank infoRank) => infoRank switch
 	{
@@ -99,5 +101,17 @@ public class InfoService(LangService lang) {
 		AgentRank.S => "icons/ranks/Icon_AgentRank_S.webp",
 		_ => throw new ArgumentOutOfRangeException(nameof(infoRank), infoRank, null)
 	};
+	
 	public string AscensionToString(AscensionState context) => context.ToString().Replace("A", "").Replace("_", "/");
+	
+	public BaseInfo GetVar<T>(T value) where T : struct, Enum {
+		if (typeof(T) == typeof(Attributes))
+			return this[(Attributes)(object)value];
+		if (typeof(T) == typeof(Factions))
+			return this[(Factions)(object)value];
+		if (typeof(T) == typeof(Specialties))
+			return this[(Specialties)(object)value];
+
+		throw new NotImplementedException();
+	}
 }

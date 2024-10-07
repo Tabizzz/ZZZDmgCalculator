@@ -3,6 +3,7 @@ namespace ZZZDmgCalculator.Components.Main;
 using System.Diagnostics.CodeAnalysis;
 using MessagePipe;
 using Microsoft.AspNetCore.Components;
+using Radzen;
 using Services;
 
 public abstract class MainComponent : ComponentBase, IDisposable {
@@ -11,6 +12,9 @@ public abstract class MainComponent : ComponentBase, IDisposable {
 
 	[Inject]
 	protected BrowserService Browser { get; private set; } = null!;
+
+	[Inject]
+	protected DialogService Dialogs { get; set; } = null!;
 	
 	[Inject]
 	protected LangService Lang { get; private set; } = null!;
@@ -22,21 +26,31 @@ public abstract class MainComponent : ComponentBase, IDisposable {
 	protected StateService State { get; private set; } = null!;
 
 	[Inject]
-	IAsyncSubscriber<BrowserDimension> ResizeSubscriber { get; set; } = null!;
+	IBufferedAsyncSubscriber<BrowserDimension> ResizeSubscriber { get; set; } = null!;
 
 	protected override async Task OnInitializedAsync() {
 		var bag = DisposableBag.CreateBuilder();
-		ResizeSubscriber.Subscribe(ResizeHandler).AddTo(bag);
+		(await ResizeSubscriber.SubscribeAsync(ResizeHandler)).AddTo(bag);
+		
 		OnDisposableBag(bag);
 		_disposable = bag.Build();
-
-		await OnBrowserResizeAsync(await Browser.GetDimensionSafe());
 	}
 
 	[SuppressMessage("ReSharper", "MethodHasAsyncOverload")]
 	async ValueTask ResizeHandler(BrowserDimension dimension, CancellationToken token) {
 		OnBrowserResize(dimension);
 		await OnBrowserResizeAsync(dimension);
+	}
+	
+	protected bool StateHasChanged(ref int state, int limit) {
+		if ((Browser.Dimensions.Width < limit && state >= limit) ||
+		    (Browser.Dimensions.Width >= limit && state < limit))
+		{
+			state = Browser.Dimensions.Width;
+			StateHasChanged();
+		}
+
+		return Browser.Dimensions.Width < limit;
 	}
 
 	protected virtual Task OnBrowserResizeAsync(BrowserDimension dimension) {

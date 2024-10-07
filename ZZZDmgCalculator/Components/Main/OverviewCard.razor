@@ -3,7 +3,7 @@
 @inherits MainComponent
 
 <RadzenStack Orientation="Orientation.Horizontal" class="rz-mb-2">
-	<div class="agent-avatar">
+	<div class="agent-avatar" @onclick="OpenAgentDialog">
 		<img src="@State.CurrentAgent.Info.Url" alt="@State.CurrentAgent.Info.Id"/>
 	</div>
 	<RadzenStack Orientation="Orientation.Vertical" Style="width: 100%">
@@ -32,14 +32,4 @@
 </RadzenStack>
 <SkillLevelSelector @bind-CoreLevel="State.CurrentAgent.CoreSkillLevel" SkillLevels="State.CurrentAgent.SkillLevels"
                     SkillLevelChanged="tuple => State.CurrentAgent.SkillLevels[tuple.Item1] = tuple.Item2"/>
-
-<RadzenStack Orientation="Orientation.Vertical">
-	<RadzenLabel>@State.CurrentAgent.CoreSkillLevel</RadzenLabel>
-	<RadzenLabel>@State.CurrentAgent.SkillLevels[0]</RadzenLabel>
-</RadzenStack>
-
-@code
-{
-
-	IEnumerable AscensionData => Enum.GetValues<AscensionState>();
-}
+<AgentStatsTable/>

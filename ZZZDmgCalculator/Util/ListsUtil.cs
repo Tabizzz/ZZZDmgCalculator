@@ -11,4 +11,8 @@ public static class ListsUtil {
 		}
 		return array;
 	}
+
+	public static bool HasFilter<T>(this List<T> list, T value) {
+		return list.Count == 0 || list.Contains(value);
+	}
 }

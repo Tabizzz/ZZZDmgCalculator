@@ -1,0 +1,49 @@
+@typeparam T where T : struct, Enum
+@inherits MainComponent
+
+<RadzenStack Orientation="Orientation.Horizontal" Gap="5px" JustifyContent="JustifyContent.Center">
+	@foreach (var value in Enum.GetValues<T>())
+	{
+		var value1 = value;
+		<div class="@GetClass(value)" @onclick="() => ChangeValue(value1)">
+			@if (value is AgentRank rank)
+			{
+				<img src="@Info.AgentRankIcon(rank)" alt=""/>
+			}
+			else
+			{
+				<img src="@Info.GetVar(value).Url" alt=""/>
+			}
+		</div>
+	}
+</RadzenStack>
+
+@code {
+
+	[Parameter]
+	public List<T> Value { get; set; } = null!;
+
+	[Parameter]
+	public EventCallback FilterChanged { get; set; }
+
+	string GetClass(T value) {
+		var c = "z-filter-item";
+		if (Value.Contains(value))
+		{
+			c += " z-filter-item-active";
+		}
+		return c;
+	}
+
+	async Task ChangeValue(T value) {
+		if (Value.Contains(value))
+		{
+			Value.Remove(value);
+		}
+		else
+		{
+			Value.Add(value);
+		}
+		await FilterChanged.InvokeAsync();
+	}
+}

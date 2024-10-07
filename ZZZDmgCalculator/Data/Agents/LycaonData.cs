@@ -19,7 +19,7 @@ public class LycaonData {
 	public readonly static AgentInfo Data = new()
 	{
 		Id = nameof(Lycaon),
-		Icon = "Lycaon",
+		Icon = "Von_Lycaon",
 		Attribute = Ice,
 		Faction = Victoria,
 		Specialty = Stun,
