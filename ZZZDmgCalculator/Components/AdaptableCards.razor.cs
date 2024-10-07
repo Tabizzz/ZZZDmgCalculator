@@ -19,8 +19,8 @@ public partial class AdaptableCards {
 		CardWith = dimension.Width switch
 		{
 			> 1920 => 450,
-			< 1420 => 350,
-			_ => (dimension.Width - 1420) * (450 - 350) / (1920 - 1420) + 350
+			< 1420 => 400,
+			_ => (dimension.Width - 1420) * (450 - 400) / (1920 - 1420) + 400
 		};
 
 		Phone = dimension.Width < 576;

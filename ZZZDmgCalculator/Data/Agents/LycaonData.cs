@@ -25,6 +25,7 @@ public class LycaonData {
 		Specialty = Stun,
 		AttackType = Strike,
 		DodgeType = Parry,
+		Rank = AgentRank.S,
 		AdditionalCondition = BasicAdditionalCondition,
 		CoreStats =
 		[

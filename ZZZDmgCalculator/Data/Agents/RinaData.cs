@@ -24,6 +24,7 @@ public class RinaData {
 		Specialty = Support,
 		AttackType = Strike,
 		DodgeType = Evasion,
+		Rank = AgentRank.S,
 		AdditionalCondition = BasicAdditionalCondition,
 		CoreStats =
 		[

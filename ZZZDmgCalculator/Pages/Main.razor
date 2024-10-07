@@ -4,14 +4,10 @@
 
 <AdaptableCards>
 	<AdaptableCard TabText="Overview">
-		<RadzenStack Orientation="Orientation.Horizontal">
-			<div class="agent-avatar">
-				<img src="@State.CurrentAgent.Info.Url" alt="@State.CurrentAgent.Info.Id"/>
-			</div>
-		</RadzenStack>
+		<OverviewCard/>
 	</AdaptableCard>
 	<AdaptableCard TabText="Party">
-		Corin
+		@State.CurrentAgent.Ascension
 	</AdaptableCard>
 	<AdaptableCard TabText="Skills">
 		Jane

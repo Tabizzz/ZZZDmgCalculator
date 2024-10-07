@@ -3,6 +3,7 @@ namespace ZZZDmgCalculator.Data.Agents;
 using Models.Enum;
 using Models.Info;
 using static AgentScales;
+using static Models.Enum.AgentRank;
 using static Models.Enum.Agents;
 using static Models.Enum.AttackTypes;
 using static Models.Enum.Attributes;
@@ -25,6 +26,7 @@ public class KoledaData {
 		Specialty = Stun,
 		AttackType = Strike,
 		DodgeType = Parry,
+		Rank = S,
 		AdditionalCondition = BasicAdditionalCondition,
 		CoreStats =
 		[

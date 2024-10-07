@@ -52,10 +52,10 @@ public class InfoService(LangService lang) {
 		_agents = LoadData<Agents, AgentInfo>(types);
 	}
 
-    static List<Type> PreLoad() => 
+	static List<Type> PreLoad() =>
 		typeof(InfoService).Assembly.GetTypes().Where(t => t.GetCustomAttribute<InfoDataAttribute>() is not null).ToList();
 
-    Dictionary<T, TInfo> LoadData<T, TInfo>(IEnumerable<Type> types) where TInfo : BaseInfo where T : struct, Enum {
+	Dictionary<T, TInfo> LoadData<T, TInfo>(IEnumerable<Type> types) where TInfo : BaseInfo where T : struct, Enum {
 		var dataProviders = types.Where(t => t.GetCustomAttribute<InfoDataAttribute<T>>() is not null).ToList();
 		var ret = new Dictionary<T, TInfo>();
 		if (dataProviders.FirstOrDefault(t => t.GetCustomAttribute<InfoDataAttribute<T>>()!.Field is null) is {} allProvider)
@@ -89,7 +89,15 @@ public class InfoService(LangService lang) {
 			//call post load
 			x.PostLoad(lang);
 		}
-		
+
 		return ret;
 	}
+
+	public string AgentRankIcon(AgentRank infoRank) => infoRank switch
+	{
+		AgentRank.A => "icons/ranks/Icon_AgentRank_A.webp",
+		AgentRank.S => "icons/ranks/Icon_AgentRank_S.webp",
+		_ => throw new ArgumentOutOfRangeException(nameof(infoRank), infoRank, null)
+	};
+	public string AscensionToString(AscensionState context) => context.ToString().Replace("A", "").Replace("_", "/");
 }

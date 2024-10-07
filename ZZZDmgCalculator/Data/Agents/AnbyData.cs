@@ -24,6 +24,7 @@ public class AnbyData {
 		Specialty = Stun,
 		AttackType = Slash,
 		DodgeType = Parry,
+		Rank = AgentRank.A,
 		AdditionalCondition = BasicAdditionalCondition,
 		CoreStats =
 		[

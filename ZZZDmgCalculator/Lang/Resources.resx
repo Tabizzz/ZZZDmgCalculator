@@ -110,4 +110,13 @@
     <data name="Skills.Ex" xml:space="preserve">
         <value>EX Special Attack</value>
     </data>
+    <data name="Agents.Rina" xml:space="preserve">
+        <value>Rina</value>
+    </data>
+    <data name="Level" xml:space="preserve">
+        <value>Level</value>
+    </data>
+    <data name="CoreSkill" xml:space="preserve">
+        <value>Core Skill</value>
+    </data>
 </root>

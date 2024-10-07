@@ -8,9 +8,9 @@ body {
 	min-height: 32px;
 }
 
-.body-content > .rz-stack >.rz-card {
+.body-content > .rz-stack > .rz-card {
 	max-width: 450px;
-	min-width: 350px;
+	min-width: 400px;
 }
 
 .body-content > .rz-stack {
@@ -22,7 +22,21 @@ body {
 	width: 100%;
 }
 
-.adaptive-tab-item > a{
+.adaptive-tab-item > a {
+	padding: 8px !important;
+}
+
+.z-select {
+	width: 67px;
+	border: none !important;
+	box-shadow: none !important;
+}
+
+.rz-dropdown {
+	cursor: pointer;
+}
+
+.adaptive-tab-item > a {
 	justify-content: center;
 }
 

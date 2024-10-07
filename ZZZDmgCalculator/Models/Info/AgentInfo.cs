@@ -15,6 +15,8 @@ public class AgentInfo : BaseInfo {
 	public required AttackTypes AttackType { get; set; }
 
 	public required DodgeTypes DodgeType { get; set; }
+	
+	public required AgentRank Rank { get; set; }
 
 	[JsonIgnore]
 	public required Func<AgentInfo, AgentInfo, bool> AdditionalCondition { get; set; }

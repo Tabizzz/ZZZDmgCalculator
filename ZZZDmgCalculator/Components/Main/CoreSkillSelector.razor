@@ -1,0 +1,11 @@
+@inherits MainComponent
+
+<RadzenStack Orientation="Orientation.Horizontal" Gap="5px">
+	@for (int i = 0; i < _urls.Length; i++)
+	{
+		var i1 = i;
+		<div class="@GetClass(i)" @onclick="()=>ChangeValue(i1)">
+			<img src="@_urls[i]" alt=""/>
+		</div>
+	}
+</RadzenStack>

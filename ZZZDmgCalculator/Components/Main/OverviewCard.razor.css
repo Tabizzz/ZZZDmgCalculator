@@ -18,3 +18,7 @@
 .agent-avatar > img {
 	height: 125px;
 }
+
+.agent-rank {
+	height: 30px;
+}

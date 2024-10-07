@@ -25,6 +25,7 @@ public class QingyiData {
 		Specialty = Stun,
 		AttackType = Strike,
 		DodgeType = Parry,
+		Rank = AgentRank.S,
 		AdditionalCondition = SpecialyAdditionalCondition(Attack),
 		CoreStats =
 		[

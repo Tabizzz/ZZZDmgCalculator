@@ -11,6 +11,15 @@ public abstract class MainComponent : ComponentBase, IDisposable {
 
 	[Inject]
 	protected BrowserService Browser { get; private set; } = null!;
+	
+	[Inject]
+	protected LangService Lang { get; private set; } = null!;
+	
+	[Inject]
+	protected InfoService Info { get; private set; } = null!;
+	
+	[Inject]
+	protected StateService State { get; private set; } = null!;
 
 	[Inject]
 	IAsyncSubscriber<BrowserDimension> ResizeSubscriber { get; set; } = null!;

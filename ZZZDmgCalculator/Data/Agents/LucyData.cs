@@ -24,7 +24,8 @@ public class LucyData {
 		Faction = Calydon,
 		Specialty = Support,
 		AttackType = Strike,
-		DodgeType = Parry,
+		DodgeType = Parry,		
+		Rank = AgentRank.A,
 		AdditionalCondition = BasicAdditionalCondition,
 		CoreStats =
 		[
