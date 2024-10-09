@@ -1,7 +1,99 @@
+@using System.Collections
+@using ZZZDmgCalculator.Models.State
+@using ZZZDmgCalculator.Util
 @inherits MainComponent
 
+<div class="rz-data-grid rz-has-pager rz-datatable  rz-datatable-scrollable rz-density-compact z-stats-table">
+	<div class="rz-data-grid-data">
+		<table class="z-stats-table rz-grid-table rz-grid-table-fixed rz-grid-table-striped  rz-grid-gridlines-horizontal">
+			<colgroup>
+				<col>
+				<col style="width: 60px;">
+				<col style="width: 65px">
+				<col style="width: 60px">
+			</colgroup>
+			<thead>
+			<tr>
+				<!--!-->
+				<th rowspan="1" colspan="1" class="rz-unselectable-text rz-text-align-left" scope="col" style="">
+					<div>
+						<span class="rz-column-title" title="@Lang["Stat"]">
+							<span class="rz-column-title-content">@Lang["Stat"]</span>
+						</span>
+					</div>
+				</th><!--!-->
+				<th rowspan="1" colspan="1" class="rz-unselectable-text rz-text-align-right" scope="col" style="">
+					<div>
+						<span class="rz-column-title" title="@Lang["Initial"]">
+							<span class="rz-column-title-content">@Lang["Initial"]</span>
+						</span>
+					</div>
+				</th>
+				<th rowspan="1" colspan="1" class="rz-unselectable-text rz-text-align-right" scope="col" style="">
+					<div>
+						<span class="rz-column-title" title="@Lang["Combat"]">
+							<span class="rz-column-title-content">@Lang["Combat"]</span>
+						</span>
+					</div>
+				</th>
+				<th rowspan="1" colspan="1" class="rz-unselectable-text rz-text-align-right" scope="col" style="">
+					<div>
+						<span class="rz-column-title rz-pr-2" title="@Lang["Total"]">
+							<span class="rz-column-title-content">@Lang["Total"]</span>
+						</span>
+					</div>
+				</th>
+			</tr>
+			</thead>
+			@for (var index = 0; index < _categories.Length; index++)
+			{
+				var category = _categories[index];
+				var li = index;
+				<tbody>
+				<tr class="rz-group-row rz-unselectable-text" @onclick="() => ToggleCategory(li)">
+					<td colspan="@Cols">
+						<RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="5px">
+							@if (_categoriesState[li])
+							{
+								<RadzenIcon Icon="arrow_drop_down"/>
+							}
+							else
+							{
+								<RadzenIcon Icon="arrow_right"/>
+							}
+							<span class="rz-cell-data">@Lang["StatCategory." + category]</span>
+						</RadzenStack>
+					</td>
+				</tr>
+				@foreach (var stat in GetStats(category))
+				{
+					var baseStat = EntityStats.Initial[stat];
+					var bonusStat = EntityStats.Bonus[stat];
+					var initialStat = EntityStats.Initial[stat];
+					var combatStat = EntityStats.Combat[stat];
+					var totalStat = EntityStats.Total[stat];
 
+					<tr class="rz-data-row rz-unselectable-text" style="@GetCatStyle(li)">
+						<td>
+							<span class=@GetStatClass(totalStat)>@Info[stat].DisplayName</span>
+						</td>
+						<td class="rz-text-align-right initial-stat">
+							<span class=@GetStatClass(initialStat)>@stat.Format(initialStat)</span>
+						</td>
+						<td class="rz-text-align-right">
+							<span class=@GetCombatClass(combatStat)>
+								@(combatStat == 0 ? "" : "+")
+								@stat.Format(combatStat)
+							</span>
+						</td>
+						<td class="rz-text-align-right">
+							<span class=@GetStatClass(totalStat)>@stat.Format(totalStat)</span>
+						</td>
+					</tr>
+				}
+				</tbody>
+			}
 
-@code {
-	
-}
+		</table>
+	</div>
+</div>

@@ -13,7 +13,7 @@ public partial class AdaptableCard {
 	[Parameter]
 	public string TabText { get; set; } = string.Empty;
 
-	string CardStyle => $"width: {Parent!.CardWith}px;";
+	string CardStyle => $"width: {Parent!.CardWith}px; overflow: scroll;";
 
 	protected override void OnBrowserResize(BrowserDimension dimension) => StateHasChanged();
 }

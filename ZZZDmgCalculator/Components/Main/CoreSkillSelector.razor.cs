@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 using Models.Enum;
 
 public partial class CoreSkillSelector {
-	string[] _urls;
+	string[] _urls = null!;
 
 	[Parameter]
 	public EventCallback<CoreSkills> ValueChanged { get; set; }

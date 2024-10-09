@@ -12,8 +12,8 @@ public enum Stats {
 	Impact,
 	CritRate,
 	CritDmg,
-	Pen,
 	PenRatio,
+	Pen,
 	EnergyRegen,
 	Proficiency,
 	Mastery,
@@ -25,7 +25,9 @@ public enum Stats {
 	IceDmg,
 	PhysicalDmg,
 	
-	ShieldPower,
+	// Unique buffs	stats
+	ShieldPower = 35,
+	BonusDmg,
 	
 	// special anomaly stats, this stats are hidden by default unless theis value is not 0, these are increased by specific agents or skills.
 	// for example jane core skill add physical anomaly crit rate and crit dmg.
@@ -42,8 +44,7 @@ public enum Stats {
 	
 	// special stats, these ones are also hidden by default, but they are increased by specific agents or skills.
 	// also these stats can be modified for enemies.
-	BonusDmg = 75,
-	DmgTaken,
+	DmgTaken = 75,
 	DmgReduction,
 	StunDmg,
 	DmgRes,

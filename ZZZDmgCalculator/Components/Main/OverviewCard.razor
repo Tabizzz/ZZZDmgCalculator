@@ -32,4 +32,4 @@
 </RadzenStack>
 <SkillLevelSelector @bind-CoreLevel="State.CurrentAgent.CoreSkillLevel" SkillLevels="State.CurrentAgent.SkillLevels"
                     SkillLevelChanged="tuple => State.CurrentAgent.SkillLevels[tuple.Item1] = tuple.Item2"/>
-<AgentStatsTable/>
+<AgentStatsTable EntityStats="State.CurrentAgent.Stats"/>

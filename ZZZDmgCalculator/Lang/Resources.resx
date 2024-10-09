@@ -119,4 +119,13 @@
     <data name="CoreSkill" xml:space="preserve">
         <value>Core Skill</value>
     </data>
+    <data name="Total" xml:space="preserve">
+        <value>Total</value>
+    </data>
+    <data name="Combat" xml:space="preserve">
+        <value>Mod</value>
+    </data>
+    <data name="Initial" xml:space="preserve">
+        <value>Base</value>
+    </data>
 </root>

@@ -5,8 +5,6 @@ using Microsoft.AspNetCore.Components;
 using Services;
 
 public partial class AdaptableCards {
-	
-	int _pageWith;
 
 	public int CardWith { get; private set; }
 
