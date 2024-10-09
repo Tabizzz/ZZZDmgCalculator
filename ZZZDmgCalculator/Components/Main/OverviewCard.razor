@@ -18,7 +18,7 @@
 				</RadzenLabel>
 				<RadzenDropDown TValue="AscensionState" @bind-Value="@State.CurrentAgent.Ascension" Data="@AscensionData" Chips="true" class="z-select">
 					<Template>
-						@Info.AscensionToString((AscensionState)(object)context);
+						@Info.AscensionToString((AscensionState)(object)context)
 					</Template>
 				</RadzenDropDown>
 			</div>

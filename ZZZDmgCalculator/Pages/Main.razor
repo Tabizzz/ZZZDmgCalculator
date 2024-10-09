@@ -1,15 +1,18 @@
 ﻿@page "/"
 @inject StateService State
 @inject InfoService Info
+@inject LangService Lang
 
 <AdaptableCards>
-	<AdaptableCard TabText="Overview">
+	<AdaptableCard TabText=@Lang["Overview"]>
 		<OverviewCard/>
 	</AdaptableCard>
-	<AdaptableCard TabText="Party">
+	<AdaptableCard TabText=@Lang["Party"]>
 		@State.CurrentAgent.Ascension
 	</AdaptableCard>
-	<AdaptableCard TabText="Skills">
-		Jane
+	<AdaptableCard TabText=@Lang["Skills"]>
+		<RadzenTextArea Value="@Lang.GenMiss()">
+			
+		</RadzenTextArea>
 	</AdaptableCard>
 </AdaptableCards>

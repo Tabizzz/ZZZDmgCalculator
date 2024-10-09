@@ -3,7 +3,7 @@
 <root>
     <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <xsd:element name="root" msdata:IsDataSet="true">
-            
+
         </xsd:element>
     </xsd:schema>
     <resheader name="resmimetype">
@@ -83,7 +83,8 @@
     </data>
     <data name="CoreSkills.D" xml:space="preserve">
         <value>D</value>
-    </data><data name="CoreSkills.E" xml:space="preserve">
+    </data>
+    <data name="CoreSkills.E" xml:space="preserve">
         <value>E</value>
     </data>
     <data name="CoreSkills.F" xml:space="preserve">
@@ -127,5 +128,146 @@
     </data>
     <data name="Initial" xml:space="preserve">
         <value>Base</value>
+    </data>
+    <data name="AgentSelection" xml:space="preserve">
+        <value>Agent Selection</value>
+    </data>
+    <data name="StatCategory.Anomaly" xml:space="preserve">
+        <value>Anomaly Buffs</value>
+    </data>
+    <data name="Search" xml:space="preserve">
+        <value>Search...</value>
+    </data>
+    <data name="StatCategory.Unique" xml:space="preserve">
+        <value>Unique Buffs</value>
+    </data>
+    <data name="StatCategory.Bonus" xml:space="preserve">
+        <value>Attribute Bonus</value>
+    </data>
+    <data name="StatCategory.Basic" xml:space="preserve">
+        <value>Basic Stats</value>
+    </data>
+    <data name="Stat" xml:space="preserve">
+        <value>Stat</value>
+    </data>
+    <data name="Stats.Atk" xml:space="preserve">
+        <value>Atk</value>
+    </data>
+    <data name="Stats.Def" xml:space="preserve">
+        <value>Def</value>
+    </data>
+    <data name="Stats.Hp" xml:space="preserve">
+        <value>Hp</value>
+    </data>
+    <data name="Stats.CritRate" xml:space="preserve">
+        <value>CRIT Rate</value>
+    </data>
+    <data name="Stats.CritDmg" xml:space="preserve">
+        <value>CRIT DMG</value>
+    </data>
+    <data name="Stats.Impact" xml:space="preserve">
+        <value>Impact</value>
+    </data>
+    <data name="Stats.Pen" xml:space="preserve">
+        <value>PEN</value>
+    </data>
+    <data name="Stats.PenRatio" xml:space="preserve">
+        <value>PEN Ratio</value>
+    </data>
+    <data name="Stats.EnergyRegen" xml:space="preserve">
+        <value>Energy Regen</value>
+    </data>
+    <data name="Stats.Proficiency" xml:space="preserve">
+        <value>Anomaly Proficiency</value>
+    </data>
+    <data name="Stats.Mastery" xml:space="preserve">
+        <value>Anomaly Mastery</value>
+    </data>
+    <data name="Stats.ElectricDmg" xml:space="preserve">
+        <value>Electric DMG</value>
+    </data>
+    <data name="Stats.EtherDmg" xml:space="preserve">
+        <value>Ether DMG</value>
+    </data>
+    <data name="Stats.FireDmg" xml:space="preserve">
+        <value>Fire DMG</value>
+    </data>
+    <data name="Stats.IceDmg" xml:space="preserve">
+        <value>Ice DMG</value>
+    </data>
+    <data name="Stats.PhysicalDmg" xml:space="preserve">
+        <value>Physical DMG</value>
+    </data>
+    <data name="Stats.ShieldPower" xml:space="preserve">
+        <value>Shield Power</value>
+    </data>
+    <data name="Stats.ElectricCritDmg" xml:space="preserve">
+        <value>Shock CRIT DMG</value>
+    </data>
+    <data name="Stats.EtherCritDmg" xml:space="preserve">
+        <value>Corruption CRIT DMG</value>
+    </data>
+    <data name="Stats.FireCritDmg" xml:space="preserve">
+        <value>Burn CRIT DMG</value>
+    </data>
+    <data name="Stats.IceCritDmg" xml:space="preserve">
+        <value>Shatter CRIT DMG</value>
+    </data>
+    <data name="Stats.PhysicalCritDmg" xml:space="preserve">
+        <value>Assault CRIT Dmg</value>
+    </data>
+    <data name="Stats.ElectricCritRate" xml:space="preserve">
+        <value>Shock CRIT Rate</value>
+    </data>
+    <data name="Stats.EtherCritRate" xml:space="preserve">
+        <value>Corruption CRIT Rate</value>
+    </data>
+    <data name="Stats.FireCritRate" xml:space="preserve">
+        <value>Burn CRIT Rate</value>
+    </data>
+    <data name="Stats.IceCritRate" xml:space="preserve">
+        <value>Shatter CRIT Rate</value>
+    </data>
+    <data name="Stats.PhysicalCritRate" xml:space="preserve">
+        <value>Assault CRIT Rate</value>
+    </data>
+    <data name="Stats.BonusDmg" xml:space="preserve">
+        <value>All DMG</value>
+    </data>
+    <data name="Stats.DmgTaken" xml:space="preserve">
+        <value>Dmg Taken</value>
+    </data>
+    <data name="Stats.DmgReduction" xml:space="preserve">
+        <value>Dmg Reduction</value>
+    </data>
+    <data name="Stats.StunDmg" xml:space="preserve">
+        <value>Stun DMG</value>
+    </data>
+    <data name="Stats.DmgRes" xml:space="preserve">
+        <value>Dmg Resistance</value>
+    </data>
+    <data name="Stats.ElectricRes" xml:space="preserve">
+        <value>Electric Resistance</value>
+    </data>
+    <data name="Stats.EtherRes" xml:space="preserve">
+        <value>Ether Resistance</value>
+    </data>
+    <data name="Stats.FireRes" xml:space="preserve">
+        <value>Fire Resistance</value>
+    </data>
+    <data name="Stats.IceRes" xml:space="preserve">
+        <value>Ice Resistance</value>
+    </data>
+    <data name="Stats.PhysicalRes" xml:space="preserve">
+        <value>Physical Resistance</value>
+    </data>
+    <data name="Overview" xml:space="preserve">
+        <value>Overview</value>
+    </data>
+    <data name="Party" xml:space="preserve">
+        <value>Party</value>
+    </data>
+    <data name="Skills" xml:space="preserve">
+        <value>Skills</value>
     </data>
 </root>
