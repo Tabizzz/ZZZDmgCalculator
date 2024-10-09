@@ -16,15 +16,15 @@
 				<RadzenLabel>
 					@Lang["Level"]:
 				</RadzenLabel>
-				<RadzenDropDown @bind-Value="@State.CurrentAgent.Ascension" Data="@AscensionData" Chips="true" class="z-select">
+				<RadzenDropDown TValue="AscensionState" @bind-Value="@State.CurrentAgent.Ascension" Data="@AscensionData" Chips="true" class="z-select">
 					<Template>
-						@Info.AscensionToString((AscensionState)context)
+						@Info.AscensionToString((AscensionState)(object)context);
 					</Template>
 				</RadzenDropDown>
 			</div>
 			<RadzenDropDown @bind-Value="@State.CurrentAgent.Cinema" Data="@ListsUtil.Simple(0, 6)" Chips="true" Style="width: 55px">
 				<Template>
-					@("M" + context)
+					@("M" + (object)context)
 				</Template>
 			</RadzenDropDown>
 		</RadzenStack>

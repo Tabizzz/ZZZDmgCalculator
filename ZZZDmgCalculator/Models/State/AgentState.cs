@@ -91,7 +91,7 @@ public class AgentState {
 				Stats.Base[core2.Stat] += core2.Value;
 			}
 		}
-
+		// TODO: look for base modifiers on weapons or buffs
 		Stats.Update();
 	}
 }
