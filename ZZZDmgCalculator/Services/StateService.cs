@@ -6,17 +6,14 @@ using Models.State;
 public class StateService {
 	InfoService _info;
 	
-	AgentState _currentAgent;
 	int _currentAgentIndex;
+	
+	public SetupState CurrentSetup { get; set; } = new();
 
 	public AgentState CurrentAgent
 	{
-		get => _currentAgent;
-		set
-		{
-			_currentAgent = value;
-			TeamAgents[_currentAgentIndex] = value;
-		}
+		get => CurrentSetup.Agents[_currentAgentIndex]!;
+		set => CurrentSetup.Agents[_currentAgentIndex] = value;
 	}
 
 	public AgentState?[] TeamAgents { get; private set; } = new AgentState[3];
@@ -24,8 +21,7 @@ public class StateService {
 	public StateService(InfoService info) {
 		_info = info;
 		// set ellen by default
-		_currentAgent = new(_info[Agents.Rina]);
-		TeamAgents[0] = CurrentAgent;
+		CurrentSetup.Agents[0] = new(_info[Agents.Rina]);
 		_currentAgentIndex = 0;
 	}
 }

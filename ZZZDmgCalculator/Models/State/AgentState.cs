@@ -45,6 +45,10 @@ public class AgentState {
 	/// 4: Ultimate
 	/// </summary>
 	public int[] SkillLevels { get; private set; } = [1, 1, 1, 1, 1];
+	
+	public EngineState? Engine { get; private set; }
+	
+	public DiscState?[] Discs { get; } = new DiscState?[6];
 
 	public AgentState(AgentInfo info) {
 		Info = info;
