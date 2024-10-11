@@ -247,3 +247,4 @@ FodyWeavers.xsd
 *.msp
 *.sln.iml
 .build/
+.vercel
