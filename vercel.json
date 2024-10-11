@@ -2,5 +2,5 @@
 	"framework": null,
 	"buildCommand": "/vercel/.dotnet/dotnet publish ZZZDmgCalculator --configuration Release --output .build/publish --self-contained",
 	"outputDirectory": ".build/publish/wwwroot",
-	"installCommand": "dnf install -y wget && wget https://dot.net/v1/dotnet-install.sh -O dotnet-install.sh && chmod +x ./dotnet-install.sh && ./dotnet-install.sh"
+	"installCommand": "chmod +x ./install.sh && ./install.sh"
 }
