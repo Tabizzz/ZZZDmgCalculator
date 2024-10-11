@@ -1,0 +1,6 @@
+{
+	"framework": null,
+	"buildCommand": "dotnet publish ZZZDmgCalculator --configuration Release --output .build/publish --self-contained",
+	"outputDirectory": ".build/publish/wwwroot",
+	"installCommand": ""
+}
