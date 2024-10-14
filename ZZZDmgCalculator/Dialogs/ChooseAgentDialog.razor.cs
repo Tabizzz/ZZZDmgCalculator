@@ -33,5 +33,5 @@ public partial class ChooseAgentDialog {
 		.Where(i => i.Value.DisplayName.Contains(_searchFilter, StringComparison.CurrentCultureIgnoreCase))
 		.Where(i => _attributesFilter.HasFilter(i.Value.Attribute) && _specialtiesFilter.HasFilter(i.Value.Specialty)
 		                                                          && _rankFilter.HasFilter(i.Value.Rank))
-		.Where(i => State.TeamAgents.All(a => a?.Agent != i.Key));
+		.Where(i => State.CurrentSetup.Agents.All(a => a?.Agent != i.Key));
 }

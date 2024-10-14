@@ -1,0 +1,23 @@
+@using ZZZDmgCalculator.Models.State
+@inherits MainComponent
+
+<RadzenTabs	class="no-border-tabs setup-tabs">
+	<Tabs>
+		<RadzenTabsItem Text=@Lang["Equipment"] class="adaptive-tab-item">
+			<EquipmentSetup Agent="TeamState.Agents[State.CurrentAgentIndex]"/>
+		</RadzenTabsItem>
+		<RadzenTabsItem Text=@Lang["Enemy"] class="adaptive-tab-item">
+
+		</RadzenTabsItem>
+		<RadzenTabsItem Text=@Lang["Team"] class="adaptive-tab-item">
+
+		</RadzenTabsItem>
+	</Tabs>
+</RadzenTabs>
+
+@code {
+
+	[Parameter]
+	public SetupState TeamState { get; set; } = null!;
+
+}

@@ -2,7 +2,6 @@ namespace ZZZDmgCalculator.Data.Discs;
 
 using Models.Enum;
 using Models.Info;
-using Util;
 
 [InfoData<Discs>(Discs.InfernoMetal)]
 public class InfernoMetalData {

@@ -10,7 +10,6 @@ using static Models.Enum.BuffTrigger;
 using static Models.Enum.Factions;
 using static Models.Enum.Skills;
 using static Models.Enum.Specialties;
-using static Models.Enum.StatModifiers;
 using static Models.Enum.Stats;
 using static Models.Info.DodgeTypes;
 

@@ -1,6 +1,5 @@
 namespace ZZZDmgCalculator.Components;
 
-using MessagePipe;
 using Microsoft.AspNetCore.Components;
 using Services;
 
@@ -16,9 +15,9 @@ public partial class AdaptableCards {
 	protected override void OnBrowserResize(BrowserDimension dimension) {
 		CardWith = dimension.Width switch
 		{
-			> 1920 => 450,
+			> 1900 => 450,
 			< 1420 => 400,
-			_ => (dimension.Width - 1420) * (450 - 400) / (1920 - 1420) + 400
+			_ => (dimension.Width - 1420) * (450 - 400) / (1900 - 1420) + 400
 		};
 
 		Phone = dimension.Width < 576;

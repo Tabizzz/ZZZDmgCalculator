@@ -26,6 +26,20 @@ body {
 	padding: 8px !important;
 }
 
+.no-border-tabs .rz-tabview-panels {
+	border: none;
+}
+
+.no-border-tabs .adaptive-tab-item {
+	border-left: none;
+	border-right: none;
+}
+
+.setup-tabs .rz-tabview-panel {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .z-select {
 	width: 67px;
 	border: none !important;
@@ -112,3 +126,4 @@ body {
 .blazor-error-boundary::before {
 	content: "An error has occurred. "
 }
+

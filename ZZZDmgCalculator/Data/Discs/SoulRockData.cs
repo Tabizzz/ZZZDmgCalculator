@@ -2,7 +2,6 @@ namespace ZZZDmgCalculator.Data.Discs;
 
 using Models.Enum;
 using Models.Info;
-using Util;
 
 [InfoData<Discs>(Discs.SoulRock)]
 public class SoulRockData {

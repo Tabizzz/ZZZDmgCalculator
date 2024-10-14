@@ -1,28 +1,27 @@
-@using System.Collections
 @using ZZZDmgCalculator.Util
 @inherits MainComponent
 
 <RadzenStack Orientation="Orientation.Horizontal" class="rz-mb-2">
 	<div class="agent-avatar" @onclick="OpenAgentDialog">
-		<img src="@State.CurrentAgent.Info.Url" alt="@State.CurrentAgent.Info.Id"/>
+		<img src="@Agent.Info.Url" alt="@Agent.Info.Id"/>
 	</div>
 	<RadzenStack Orientation="Orientation.Vertical" Style="width: 100%">
 		<RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" class="agent-name" JustifyContent="JustifyContent.Start" Gap="5px">
-			<img class="agent-rank" alt="" src="@Info.AgentRankIcon(@State.CurrentAgent.Info.Rank)"/>
-			<h2 class="rz-m-0">@State.CurrentAgent.Info.DisplayName</h2>
+			<img class="agent-rank" alt="" src="@Info.AgentRankIcon(@Agent.Info.Rank)"/>
+			<h2 class="rz-m-0">@Agent.Info.DisplayName</h2>
 		</RadzenStack>
 		<RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" class="agent-level" JustifyContent="JustifyContent.SpaceBetween" Gap="5px">
 			<div>
 				<RadzenLabel>
 					@Lang["Level"]:
 				</RadzenLabel>
-				<RadzenDropDown TValue="AscensionState" @bind-Value="@State.CurrentAgent.Ascension" Data="@AscensionData" Chips="true" class="z-select">
+				<RadzenDropDown TValue="AscensionState" @bind-Value="@Agent.Ascension" Data="@AscensionData" Chips="true" class="z-select">
 					<Template>
 						@Info.AscensionToString((AscensionState)(object)context)
 					</Template>
 				</RadzenDropDown>
 			</div>
-			<RadzenDropDown @bind-Value="@State.CurrentAgent.Cinema" Data="@ListsUtil.Simple(0, 6)" Chips="true" Style="width: 55px">
+			<RadzenDropDown @bind-Value="@Agent.Cinema" Data="@ListsUtil.Simple(0, 6)" Chips="true" Style="width: 55px">
 				<Template>
 					@("M" + (object)context)
 				</Template>
@@ -30,6 +29,6 @@
 		</RadzenStack>
 	</RadzenStack>
 </RadzenStack>
-<SkillLevelSelector @bind-CoreLevel="State.CurrentAgent.CoreSkillLevel" SkillLevels="State.CurrentAgent.SkillLevels"
-                    SkillLevelChanged="tuple => State.CurrentAgent.SkillLevels[tuple.Item1] = tuple.Item2"/>
-<AgentStatsTable EntityStats="State.CurrentAgent.Stats"/>
+<SkillLevelSelector @bind-CoreLevel="Agent.CoreSkillLevel" SkillLevels="Agent.SkillLevels"
+                    SkillLevelChanged="tuple => Agent.SkillLevels[tuple.Item1] = tuple.Item2"/>
+<AgentStatsTable EntityStats="Agent.Stats"/>

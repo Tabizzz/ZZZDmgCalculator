@@ -1,0 +1,23 @@
+@inherits MainComponent
+
+@{ Console.WriteLine("Setup renderer");}
+<div class="agent-equipment">
+	<div class="main-content">
+		<div class="agent-weapon">
+			@if (Agent.Engine is {} engine)
+			{
+				<img alt src=@engine.Info.Url/>
+			}
+		</div>
+		@for (var i = 0; i < 6; i++)
+		{
+			<div class=@($"agent-disc agent-disc-{i}")>
+				
+			</div>
+		}
+	</div>
+</div>
+
+@code {
+
+}

@@ -1,6 +1,5 @@
 namespace ZZZDmgCalculator.Util;
 
-using System.Globalization;
 using Models.Enum;
 using static Models.Enum.Stats;
 
