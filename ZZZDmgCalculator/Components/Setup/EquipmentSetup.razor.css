@@ -20,8 +20,21 @@
 	top: 48%;
 	transform: translateX(-50%) translateY(-50%);
 	cursor: pointer;
-	background-color: #b32121A2;
 	z-index: 3;
+}
+
+.main-content img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 75%;
+	height: 75%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.agent-weapon img {
+	width: 60%;
+	height: 60%;
 }
 
 .agent-disc {
@@ -35,35 +48,29 @@
 .agent-disc-0 {
 	left: 17.5%;
 	top: 4%;
-	background-color: rgba(95, 243, 30, 0.42);
 }
 
 .agent-disc-1 {
 	left: 4%;
 	top: 34.7%;
-	background-color: rgba(243, 95, 30, 0.42);
 }
 
 .agent-disc-2 {
 	left: 17.5%;
 	top: 65.4%;
-	background-color: rgba(30, 95, 243, 0.42);
 }
 
 .agent-disc-3 {
 	left: 57.5%;
 	top: 4%;
-	background-color: rgba(243, 30, 95, 0.42);
 }
 
 .agent-disc-4 {
 	left: 71.4%;
 	top: 34.7%;
-	background-color: rgba(95, 30, 243, 0.42);
 }
 
 .agent-disc-5 {
 	left: 57.5%;
 	top: 65.4%;
-	background-color: rgba(30, 243, 95, 0.42);
 }

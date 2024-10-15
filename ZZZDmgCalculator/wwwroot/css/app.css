@@ -26,7 +26,7 @@ body {
 	padding: 8px !important;
 }
 
-.no-border-tabs .rz-tabview-panels {
+.no-border-tabs > .rz-tabview-panels {
 	border: none;
 }
 
@@ -35,9 +35,13 @@ body {
 	border-right: none;
 }
 
-.setup-tabs .rz-tabview-panel {
+.setup-tabs > .rz-tabview-panels > .rz-tabview-panel {
 	padding-left: 0;
 	padding-right: 0;
+}
+
+.hidden-tabs > ul {
+	display: none;
 }
 
 .z-select {
