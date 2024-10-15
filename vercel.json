@@ -2,5 +2,13 @@
 	"framework": null,
 	"buildCommand": "/vercel/.dotnet/dotnet publish ZZZDmgCalculator --configuration Release --output .build/publish --self-contained",
 	"outputDirectory": ".build/publish/wwwroot",
-	"installCommand": "chmod +x ./install.sh && ./install.sh"
+	"installCommand": "chmod +x ./install.sh && ./install.sh",
+	"rewrites": [
+		{
+			"source": "/(.*)",
+			"destination": "/$1"
+		}
+	],
+	"cleanUrls": true,
+	"trailingSlash": false
 }
