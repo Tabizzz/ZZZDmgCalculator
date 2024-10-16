@@ -102,6 +102,14 @@ public class InfoService(LangService lang) {
 		_ => throw new ArgumentOutOfRangeException(nameof(infoRank), infoRank, null)
 	};
 	
+	public string ItemRankIcon(ItemRank infoRank) => infoRank switch
+	{
+		ItemRank.B => "icons/ranks/Item_Rank_B.webp",
+		ItemRank.A => "icons/ranks/Item_Rank_A.webp",
+		ItemRank.S => "icons/ranks/Item_Rank_S.webp",
+		_ => throw new ArgumentOutOfRangeException(nameof(infoRank), infoRank, null)
+	};
+	
 	public string AscensionToString(AscensionState context) => context.ToString().Replace("A", "").Replace("_", "/");
 	
 	public BaseInfo GetVar<T>(T value) where T : struct, Enum {

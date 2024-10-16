@@ -10,6 +10,10 @@
 			{
 				<img src="@Info.AgentRankIcon(rank)" alt=""/>
 			}
+			else if (value is ItemRank itemRank)
+			{
+				<img src="@Info.ItemRankIcon(itemRank)" alt=""/>
+			}
 			else
 			{
 				<img src="@Info.GetVar(value).Url" alt=""/>

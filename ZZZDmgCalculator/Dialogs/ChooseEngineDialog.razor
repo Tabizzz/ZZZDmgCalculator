@@ -1,0 +1,21 @@
+@using ZZZDmgCalculator.Models.State
+@inherits MainComponent
+
+<ChooseDialogTitlebar Title=@Lang["EngineSelection"] TitlebarThreshold="535" FilterThreshold="875" @bind-SearchFilter="_searchFilter">
+	<EnumFilters>
+		<EnumFilter Value="_specialtiesFilter" FilterChanged="StateHasChanged"/>
+		<EnumFilter Value="_rankFilter" FilterChanged="StateHasChanged"/>
+	</EnumFilters>
+</ChooseDialogTitlebar>
+
+<RadzenRow Gap="10px" RowGap="10px">
+	@foreach (var info in ApplyFilters())
+	{
+		var linfo = info;
+		<RadzenColumn>
+			<div class="agent-avatar" @onclick="() => Dialogs.Close(new EngineState(linfo))">
+				<img src="@info.Url" alt="@info.Id"/>
+			</div>
+		</RadzenColumn>
+	}
+</RadzenRow>

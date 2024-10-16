@@ -1,8 +1,9 @@
+@using ZZZDmgCalculator.Util
 @inherits MainComponent
 
 <div class="agent-equipment rz-pb-3">
 	<div class="main-content">
-		<div class="agent-weapon" @onclick="() => _equipmentSelectedIndex = 0">
+		<div class="agent-weapon" @onclick="EngineClick">
 			@if (Agent.Engine is {} engine)
 			{
 				<img alt src=@engine.Info.Url/>
@@ -14,11 +15,11 @@
 		</div>
 		@for (var i = 0; i < 6; i++)
 		{
-			var li = i + 1;
-			<div class=@($"agent-disc agent-disc-{i}")  @onclick="() => _equipmentSelectedIndex = li">
+			var li = i;
+			<div class=@($"agent-disc agent-disc-{i}")  @onclick="() => DiscsClick(li)">
 				@if (Agent.Discs[i] is {} disc)
 				{
-					<img alt src=@disc.Info.Url/>
+					<img alt src=@($"icons/discs/Setup_Disc_{disc.Info.Id.ToUnderscore()}.png")/>
 				}
 				else
 				{
@@ -39,13 +40,13 @@
 		</RadzenTabsItem>
 		@for (var i = 0; i < 6; i++)
 		{
+			var ld = i;
 			<RadzenTabsItem Text="Disc">
-
+				@if (Agent.Discs[ld] is {} discState)
+				{
+					@discState.Info.DisplayName
+				}
 			</RadzenTabsItem>
 		}
 	</Tabs>
 </RadzenTabs>
-
-@code {
-
-}
