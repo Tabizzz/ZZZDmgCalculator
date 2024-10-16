@@ -1,41 +1,12 @@
 @inherits MainComponent
 
-<div class="rz-dialog-titlebar rz-p-3">
-	<div class="rz-dialog-title">
-		@if (Browser.Dimensions.Width > 535)
-		{
-			<RadzenLabel class="rz-mr-3">@Lang["AgentSelection"]</RadzenLabel>
-		}
-		<RadzenTextBox Placeholder="@Lang["Search"]" @bind-Value="_searchFilter" Trim="true" class="rz-mr-3"
-		               @oninput="e => _searchFilter = e.Value?.ToString() ?? _searchFilter"/>
-		@if (_resPhone)
-		{
-			<RadzenMenu Responsive="false">
-				<RadzenMenuItem Icon="tune" class="z-filter-menu">
-					<RadzenStack Orientation="Orientation.Vertical" class="rz-m-4" JustifyContent="JustifyContent.Center">
-						<EnumFilter Value="_attributesFilter" FilterChanged="StateHasChanged"/>
-						<EnumFilter Value="_specialtiesFilter" FilterChanged="StateHasChanged"/>
-						<EnumFilter Value="_rankFilter" FilterChanged="StateHasChanged"/>
-					</RadzenStack>
-				</RadzenMenuItem>
-			</RadzenMenu>
-		}
-		else
-		{
-			<RadzenStack Orientation="Orientation.Horizontal">
-
-				<EnumFilter Value="_attributesFilter" FilterChanged="StateHasChanged"/>
-				<EnumFilter Value="_specialtiesFilter" FilterChanged="StateHasChanged"/>
-				<EnumFilter Value="_rankFilter" FilterChanged="StateHasChanged"/>
-
-			</RadzenStack>
-		}
-
-	</div>
-	<a class="rz-dialog-titlebar-icon rz-dialog-titlebar-close" style="cursor: pointer" @onclick="() => Dialogs.Close()">
-		<span class="notranslate rzi rzi-times"></span>
-	</a>
-</div>
+<ChooseDialogTitlebar Title=@Lang["AgentSelection"] TitlebarThreshold="535" FilterThreshold="875" @bind-SearchFilter="_searchFilter">
+	<EnumFilters>
+		<EnumFilter Value="_attributesFilter" FilterChanged="StateHasChanged"/>
+		<EnumFilter Value="_specialtiesFilter" FilterChanged="StateHasChanged"/>
+		<EnumFilter Value="_rankFilter" FilterChanged="StateHasChanged"/>
+	</EnumFilters>
+</ChooseDialogTitlebar>
 
 <RadzenRow Gap="10px" RowGap="10px">
 	@foreach (var (key, info) in ApplyFilters(Info.AvailableAgents))
