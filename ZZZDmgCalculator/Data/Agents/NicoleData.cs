@@ -24,6 +24,7 @@ public class NicoleData {
 		Specialty = Support,
 		AttackType = Strike,
 		DodgeType = Parry,
+		Rank = AgentRank.A,
 		AdditionalCondition = BasicAdditionalCondition,
 		CoreStats =
 		[

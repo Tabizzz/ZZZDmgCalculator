@@ -24,6 +24,7 @@ public class SoukakuData {
 		Specialty = Support,
 		AttackType = Slash,
 		DodgeType = Parry,
+		Rank = AgentRank.A,
 		AdditionalCondition = BasicAdditionalCondition,
 		CoreStats =
 		[

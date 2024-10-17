@@ -1,0 +1,34 @@
+@using ZZZDmgCalculator.Util
+@inherits MainComponent
+
+<RadzenStack Orientation="Orientation.Horizontal" class="rz-mb-2">
+	<div class="agent-avatar" @onclick="OpenAgentDialog">
+		<img src="@Agent.Info.Url" alt="@Agent.Info.Id"/>
+	</div>
+	<RadzenStack Orientation="Orientation.Vertical" Style="width: 100%">
+		<RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" class="agent-name" JustifyContent="JustifyContent.Start" Gap="5px">
+			<img class="agent-rank" alt="" src="@Info.AgentRankIcon(@Agent.Info.Rank)"/>
+			<h2 class="rz-m-0">@Agent.Info.DisplayName</h2>
+		</RadzenStack>
+		<RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" class="agent-level" JustifyContent="JustifyContent.SpaceBetween" Gap="5px">
+			<div>
+				<RadzenLabel>
+					@Lang["Level"]:
+				</RadzenLabel>
+				<RadzenDropDown TValue="AscensionState" @bind-Value="@Agent.Ascension" Data="@AscensionData" Chips="true" class="z-select">
+					<Template>
+						@Info.AscensionToString((AscensionState)(object)context)
+					</Template>
+				</RadzenDropDown>
+			</div>
+			<RadzenDropDown @bind-Value="@Agent.Cinema" Data="@ListsUtil.Simple(0, 6)" Chips="true" Style="width: 55px">
+				<Template>
+					@("M" + (object)context)
+				</Template>
+			</RadzenDropDown>
+		</RadzenStack>
+	</RadzenStack>
+</RadzenStack>
+<SkillLevelSelector @bind-CoreLevel="Agent.CoreSkillLevel" SkillLevels="Agent.SkillLevels"
+                    SkillLevelChanged="tuple => Agent.SkillLevels[tuple.Item1] = tuple.Item2"/>
+<AgentStatsTable EntityStats="Agent.Stats"/>

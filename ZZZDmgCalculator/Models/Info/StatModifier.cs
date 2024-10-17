@@ -1,6 +1,5 @@
 namespace ZZZDmgCalculator.Models.Info;
 
-using System.Diagnostics.CodeAnalysis;
 using Enum;
 using Util;
 

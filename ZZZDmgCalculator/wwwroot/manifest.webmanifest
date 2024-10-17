@@ -1,6 +1,6 @@
 {
-  "name": "ZZZDmgCalculator",
-  "short_name": "ZZZDmgCalculator",
+  "name": "ZZZ Damage Calculator",
+  "short_name": "ZZZ Dmg Calculator",
   "id": "./",
   "start_url": "./",
   "display": "standalone",

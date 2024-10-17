@@ -1,0 +1,52 @@
+@using ZZZDmgCalculator.Util
+@inherits MainComponent
+
+<div class="agent-equipment rz-pb-3">
+	<div class="main-content">
+		<div class="agent-weapon" @onclick="EngineClick">
+			@if (Agent.Engine is {} engine)
+			{
+				<img alt src=@engine.Info.Url/>
+			}
+			else
+			{
+				<img alt src="icons/misc/Icon_Storage_W-Engine.webp"/>
+			}
+		</div>
+		@for (var i = 0; i < 6; i++)
+		{
+			var li = i;
+			<div class=@($"agent-disc agent-disc-{i}")  @onclick="() => DiscsClick(li)">
+				@if (Agent.Discs[i] is {} disc)
+				{
+					<img alt src=@($"icons/discs/Setup_Disc_{disc.Info.Id.ToUnderscore()}.png")/>
+				}
+				else
+				{
+					<img alt src="icons/misc/Icon_Storage_Drive_Disc.webp"/>
+				}
+			</div>
+		}
+	</div>
+</div>
+
+<RadzenTabs class="hidden-tabs" @bind-SelectedIndex="_equipmentSelectedIndex">
+	<Tabs>
+		<RadzenTabsItem Text="Engine">
+			@if (Agent.Engine is {} engineState)
+			{
+				@engineState.Info.DisplayName
+			}
+		</RadzenTabsItem>
+		@for (var i = 0; i < 6; i++)
+		{
+			var ld = i;
+			<RadzenTabsItem Text="Disc">
+				@if (Agent.Discs[ld] is {} discState)
+				{
+					@discState.Info.DisplayName
+				}
+			</RadzenTabsItem>
+		}
+	</Tabs>
+</RadzenTabs>

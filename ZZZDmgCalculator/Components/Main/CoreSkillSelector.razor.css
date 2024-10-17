@@ -1,0 +1,17 @@
+.core-skill > img {
+	height: 40px;
+	width: 40px;
+}
+
+.core-skill {
+	cursor: pointer;
+}
+
+
+.core-skill-selected > img, .core-skill:hover > img {
+	filter: brightness(0.25);
+}
+
+.core-skill-selected:hover > img, .core-skill-current:hover > img {
+	filter: none;
+}

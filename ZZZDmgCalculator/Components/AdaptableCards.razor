@@ -1,0 +1,18 @@
+@inherits MainComponent
+
+<CascadingValue Value="this" IsFixed="true">
+	@if (Phone)
+	{
+		<RadzenTabs Style="height: 100%" TabPosition="TabPosition.Bottom">
+			<Tabs>
+				@ChildContent
+			</Tabs>
+		</RadzenTabs>
+	}
+	else
+	{
+		<RadzenStack Orientation="Orientation.Horizontal" Style="height: 100%" JustifyContent="JustifyContent.Center">
+			@ChildContent
+		</RadzenStack>
+	}
+</CascadingValue>

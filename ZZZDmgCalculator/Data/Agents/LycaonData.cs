@@ -10,7 +10,6 @@ using static Models.Enum.BuffTrigger;
 using static Models.Enum.Factions;
 using static Models.Enum.Skills;
 using static Models.Enum.Specialties;
-using static Models.Enum.StatModifiers;
 using static Models.Enum.Stats;
 using static Models.Info.DodgeTypes;
 
@@ -19,12 +18,13 @@ public class LycaonData {
 	public readonly static AgentInfo Data = new()
 	{
 		Id = nameof(Lycaon),
-		Icon = "Lycaon",
+		Icon = "Von_Lycaon",
 		Attribute = Ice,
 		Faction = Victoria,
 		Specialty = Stun,
 		AttackType = Strike,
 		DodgeType = Parry,
+		Rank = AgentRank.S,
 		AdditionalCondition = BasicAdditionalCondition,
 		CoreStats =
 		[

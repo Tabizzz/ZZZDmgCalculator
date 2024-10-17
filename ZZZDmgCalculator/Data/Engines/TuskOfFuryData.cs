@@ -15,7 +15,7 @@ public class TuskOfFuryData {
 	public readonly static EngineInfo Data = new()
 	{
 		Id = nameof(TuskOfFury),
-		Icon = "Tusk_of_Fury",
+		Icon = "Tusks_of_Fury",
 		Rank = S,
 		Type = Defense,
 		MainStat = new()

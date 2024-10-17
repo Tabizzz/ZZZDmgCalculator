@@ -1,0 +1,14 @@
+.z-filter-item > img {
+	height: 25px;
+	width: 25px;
+}
+
+.z-filter-item {
+	cursor: pointer;
+	transition: all .15s linear;
+}
+
+.z-filter-item-active > img{
+	box-shadow: 0 0 3px 3px var(--rz-primary);
+	border-radius: 35%;
+}

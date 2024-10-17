@@ -1,0 +1,34 @@
+@inherits MainComponent
+
+<div class="rz-dialog-titlebar rz-p-3">
+	<div class="rz-dialog-title">
+		@if (Browser.Dimensions.Width > TitlebarThreshold)
+		{
+			<RadzenLabel class="rz-mr-3">@Title</RadzenLabel>
+		}
+		<RadzenTextBox Placeholder="@Lang["Search"]" Trim="true" class="rz-mr-3" Value="@SearchFilter" ValueChanged="SearchFilterChanged"
+		               @oninput="args => SearchFilterChanged.InvokeAsync(args.Value?.ToString() ?? SearchFilter)"/>
+		@if (_resPhone)
+		{
+			<RadzenMenu Responsive="false">
+				<RadzenMenuItem Icon="tune" class="z-filter-menu">
+					<RadzenStack Orientation="Orientation.Vertical" class="rz-m-4" JustifyContent="JustifyContent.Center">
+						@EnumFilters
+					</RadzenStack>
+				</RadzenMenuItem>
+			</RadzenMenu>
+		}
+		else
+		{
+			<RadzenStack Orientation="Orientation.Horizontal">
+
+				@EnumFilters
+
+			</RadzenStack>
+		}
+
+	</div>
+	<a class="rz-dialog-titlebar-icon rz-dialog-titlebar-close" style="cursor: pointer" @onclick="() => Dialogs.Close()">
+		<span class="notranslate rzi rzi-times"></span>
+	</a>
+</div>

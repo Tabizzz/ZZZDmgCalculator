@@ -1,0 +1,76 @@
+.main-content {
+	background: url(icons/misc/equipment-main-bg.png) no-repeat center center;
+	background-size: 100% 100%;
+	z-index: 10;
+	position: relative;
+	width: 100%;
+	aspect-ratio: 1/ 0.9577804583835947;
+}
+
+.agent-equipment {
+	display: flex;
+	justify-content: center;
+}
+
+.agent-weapon {
+	position: absolute;
+	width: 40%;
+	aspect-ratio: 1/1;
+	left: 50%;
+	top: 48%;
+	transform: translateX(-50%) translateY(-50%);
+	cursor: pointer;
+	z-index: 3;
+}
+
+.main-content img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 75%;
+	height: 75%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.agent-weapon img {
+	width: 60%;
+	height: 60%;
+}
+
+.agent-disc {
+	position: absolute;
+	width: 25%;
+	aspect-ratio: 1/1;
+	cursor: pointer;
+	z-index: 4;
+}
+
+.agent-disc-0 {
+	left: 17.5%;
+	top: 4%;
+}
+
+.agent-disc-1 {
+	left: 4%;
+	top: 34.7%;
+}
+
+.agent-disc-2 {
+	left: 17.5%;
+	top: 65.4%;
+}
+
+.agent-disc-5 {
+	left: 57.5%;
+	top: 4%;
+}
+
+.agent-disc-4 {
+	left: 71.4%;
+	top: 34.7%;
+}
+
+.agent-disc-3 {
+	left: 57.5%;
+	top: 65.4%;
+}
