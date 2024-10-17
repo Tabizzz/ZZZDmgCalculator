@@ -23,10 +23,10 @@ public class StateService {
 		CurrentAgentIndex = 0;
 		
 		// for testing set a engine
-		CurrentAgent.Engine = new (info[Engines.Cradle])
+		/*CurrentAgent.Engine = new (info[Engines.Cradle])
 		{
 			Refinement = 2
-		};
+		};*/
 		
 		// for testing set a disc
 		CurrentAgent.Discs[0] = new DiscState(info[Discs.FreedomBlues], info[Stats.Atk].DiscData[0]);

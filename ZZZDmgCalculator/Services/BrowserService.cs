@@ -3,6 +3,7 @@ namespace ZZZDmgCalculator.Services;
 using Microsoft.JSInterop;
 using System.Threading.Tasks;
 using MessagePipe;
+using Microsoft.AspNetCore.Components;
 
 public class BrowserService(IJSRuntime js, IBufferedAsyncPublisher<BrowserDimension> publisher) {
 
@@ -26,6 +27,9 @@ public class BrowserService(IJSRuntime js, IBufferedAsyncPublisher<BrowserDimens
 		await js.InvokeVoidAsync("registerViewportChangeCallback", DotNetObjectReference.Create(this));
 	}
 
+	public async Task<BrowserDimension> GetElementDimensionAsync(ElementReference container) {
+		return await js.InvokeAsync<BrowserDimension>("getElementDimensions", container);
+	}
 }
 
 public struct BrowserDimension {

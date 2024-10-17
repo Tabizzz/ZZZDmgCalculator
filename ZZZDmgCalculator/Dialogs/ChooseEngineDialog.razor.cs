@@ -13,11 +13,11 @@ public partial class ChooseEngineDialog {
 
 	protected override void OnInitialized() {
 		base.OnInitialized();
-		_engines = Enum.GetValues<Engines>().Select(e=>Info[e]).ToArray();
+		_engines = Enum.GetValues<Engines>().Select(e => Info[e]).ToArray();
 	}
-	
-	IEnumerable<EngineInfo> ApplyFilters() {
-		return _engines.Where(e=>e.DisplayName.Contains(_searchFilter, StringComparison.CurrentCultureIgnoreCase))
-			.Where(e=>_specialtiesFilter.HasFilter(e.Type) && _rankFilter.HasFilter(e.Rank));
+
+	bool ApplyFilters(EngineInfo e) {
+		return e.DisplayName.Contains(_searchFilter, StringComparison.CurrentCultureIgnoreCase) &&
+		       _specialtiesFilter.HasFilter(e.Type) && _rankFilter.HasFilter(e.Rank);
 	}
 }

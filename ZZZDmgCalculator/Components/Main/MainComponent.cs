@@ -64,5 +64,6 @@ public abstract class MainComponent : ComponentBase, IDisposable {
 
 	public void Dispose() {
 		_disposable.Dispose();
+		GC.SuppressFinalize(this);
 	}
 }

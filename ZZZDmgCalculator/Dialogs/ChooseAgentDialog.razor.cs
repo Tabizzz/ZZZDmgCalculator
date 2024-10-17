@@ -9,11 +9,17 @@ public partial class ChooseAgentDialog {
 	readonly List<Attributes> _attributesFilter = [];
 	readonly List<Specialties> _specialtiesFilter = [];
 	readonly List<AgentRank> _rankFilter = [];
-	
-	
-	IEnumerable<KeyValuePair<Agents, AgentInfo>> ApplyFilters(IEnumerable<KeyValuePair<Agents, AgentInfo>> infoAvailableAgents) => infoAvailableAgents
-		.Where(i => i.Value.DisplayName.Contains(_searchFilter, StringComparison.CurrentCultureIgnoreCase))
-		.Where(i => _attributesFilter.HasFilter(i.Value.Attribute) && _specialtiesFilter.HasFilter(i.Value.Specialty)
-		                                                          && _rankFilter.HasFilter(i.Value.Rank))
-		.Where(i => State.CurrentSetup.Agents.All(a => a?.Agent != i.Key));
+
+	AgentInfo[] _agents = null!;
+
+	protected override void OnInitialized() {
+		base.OnInitialized();
+		_agents = Info.AvailableAgents.Select(i => Info[i]).ToArray();
+	}
+
+	bool ApplyFilters(AgentInfo i) => i.DisplayName.Contains(_searchFilter, StringComparison.CurrentCultureIgnoreCase) && 
+	                                  _attributesFilter.HasFilter(i.Attribute) &&
+	                                  _specialtiesFilter.HasFilter(i.Specialty)
+	                                  && _rankFilter.HasFilter(i.Rank) && 
+	                                  State.CurrentSetup.Agents.All(a => a?.Info.Id != i.Id);
 }

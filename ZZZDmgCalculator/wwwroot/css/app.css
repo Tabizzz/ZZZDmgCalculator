@@ -68,7 +68,7 @@ body {
 	max-width: 75%;
 }
 
-.agent-avatar {
+.agent-avatar, .engine-avatar {
 	position: relative;
 	cursor: pointer;
 
@@ -88,7 +88,11 @@ body {
 	flex: none;
 }
 
-.rz-col {
+.engine-avatar {
+	height: 105px;
+}
+
+.choose-grid .rz-col {
 	display: flex;
 	justify-content: center;
 }

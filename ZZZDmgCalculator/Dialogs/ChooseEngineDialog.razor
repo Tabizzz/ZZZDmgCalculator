@@ -8,14 +8,8 @@
 	</EnumFilters>
 </ChooseDialogTitlebar>
 
-<RadzenRow Gap="10px" RowGap="10px">
-	@foreach (var info in ApplyFilters())
-	{
-		var linfo = info;
-		<RadzenColumn>
-			<div class="agent-avatar" @onclick="() => Dialogs.Close(new EngineState(linfo))">
-				<img src="@info.Url" alt="@info.Id"/>
-			</div>
-		</RadzenColumn>
-	}
-</RadzenRow>
+<ChooseDialogGrid Items="_engines" IsVisible="ApplyFilters">
+	<div class="engine-avatar" @onclick="() => Dialogs.Close(new EngineState(context))">
+		<img src="@context.Url" alt="@context.Id"/>
+	</div>
+</ChooseDialogGrid>

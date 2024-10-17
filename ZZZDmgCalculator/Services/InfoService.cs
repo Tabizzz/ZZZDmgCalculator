@@ -93,7 +93,7 @@ public class InfoService(LangService lang) {
 		return ret;
 	}
 	
-	public IEnumerable<KeyValuePair<Agents, AgentInfo>> AvailableAgents => _agents;
+	public IEnumerable<Agents> AvailableAgents => _agents.Keys;
 
 	public string AgentRankIcon(AgentRank infoRank) => infoRank switch
 	{

@@ -1,0 +1,56 @@
+@inherits MainComponent
+@typeparam T where T : BaseInfo
+
+<div @ref="Container">
+	<RadzenRow Gap="10px" RowGap="10px" class="choose-grid" JustifyContent="JustifyContent.Start">
+		@foreach (var info in Items)
+		{
+			var linfo = info;
+			<div class="rz-col" style=@GetStyle(linfo)>
+				@ChildContent(linfo)
+			</div>
+		}
+	</RadzenRow>
+</div>
+
+@code
+{
+	[Parameter]
+	public IEnumerable<T> Items { get; set; } = null!;
+
+	public ElementReference Container { get; set; }
+
+	[Parameter]
+	public Predicate<T> IsVisible { get; set; } = null!;
+
+	[Parameter]
+	public RenderFragment<T> ChildContent { get; set; } = null!;
+
+	string ColWidth
+	{
+		get
+		{
+			if (_containerWidth == 0) return "103px";
+
+			var elementsPerRow = _containerWidth / 100;
+			var elementSize = (_containerWidth - (elementsPerRow - 1) * 10) / (float)elementsPerRow;
+
+			return $"{elementSize}px";
+		}
+	}
+
+	int _containerWidth;
+
+	protected override async Task OnAfterRenderAsync(bool firstRender) {
+		await base.OnAfterRenderAsync(firstRender);
+		if (firstRender || _containerWidth == 0) _containerWidth = (await Browser.GetElementDimensionAsync(Container)).Width;
+	}
+
+	protected override async Task OnBrowserResizeAsync(BrowserDimension dimension) {
+		await base.OnBrowserResizeAsync(dimension);
+		_containerWidth = (await Browser.GetElementDimensionAsync(Container)).Width;
+		StateHasChanged();
+	}
+	
+	string GetStyle(T linfo) => IsVisible(linfo) ? $"max-width: {ColWidth};" : "display: none;";
+}

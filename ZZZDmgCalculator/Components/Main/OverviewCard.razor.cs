@@ -19,7 +19,7 @@ public partial class OverviewCard {
 	async Task OpenAgentDialog() {
 		if (await Dialogs.OpenAgentDialog() is {} a)
 		{
-			MainPage.AgentSwap(new(Info[a]));
+			MainPage.AgentSwap(a);
 		}
 	}
 }

@@ -1,3 +1,4 @@
+@using ZZZDmgCalculator.Models.State
 @inherits MainComponent
 
 <ChooseDialogTitlebar Title=@Lang["AgentSelection"] TitlebarThreshold="535" FilterThreshold="875" @bind-SearchFilter="_searchFilter">
@@ -8,13 +9,8 @@
 	</EnumFilters>
 </ChooseDialogTitlebar>
 
-<RadzenRow Gap="10px" RowGap="10px">
-	@foreach (var (key, info) in ApplyFilters(Info.AvailableAgents))
-	{
-		<RadzenColumn>
-			<div class="agent-avatar" @onclick="() => Dialogs.Close(key)">
-				<img src="@info.Url" alt="@info.Id"/>
-			</div>
-		</RadzenColumn>
-	}
-</RadzenRow>
+<ChooseDialogGrid Items="_agents" IsVisible="ApplyFilters">
+	<div class="agent-avatar" @onclick="() => Dialogs.Close(new AgentState(context))">
+		<img src="@context.Url" alt="@context.Id"/>
+	</div>
+</ChooseDialogGrid>
